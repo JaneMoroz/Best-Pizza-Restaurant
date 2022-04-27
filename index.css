@@ -1,0 +1,93 @@
+/*
+==============================
+Variables
+==============================
+*/
+
+:root {
+  --primary: #696969;
+  --secondary: #ff9d7e;
+  --tertiary: #a5a5a5;
+
+  --white: #fff;
+
+  --transition: all 0.3s linear;
+
+  --radius-big: 20%;
+  --radius-small: 10%;
+
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*
+==============================
+Global Styles
+==============================
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+}
+
+ul {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+==============================
+Buttons
+==============================
+*/
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--toggle > i {
+  font-size: 2.8rem;
+  color: var(--secondary);
+}
+
+/*
+==============================
+Navbar
+==============================
+*/
+
+.container {
+  max-width: 128rem;
+  margin: 0 auto;
+}
+
+.nav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem;
+}
+
+.nav__header > span {
+  font-family: "Caveat", cursive;
+  font-size: 4.8rem;
+  color: var(--secondary);
+}
