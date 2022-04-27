@@ -14,25 +14,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato:ital,wght@0,400;0,700;1,300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap"
       rel="stylesheet"
     />
 
     <title>Document</title>
   </head>
   <body>
-    <nav class="container">
-      <div class="nav">
-        <div class="nav__header">
-          <span>Best Pizza</span>
-          <button type="button" class="btn btn--cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="cart__quantity">0</span>
-          </button>
-          <button type="button" class="btn btn--toggle">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
+    <header class="container">
+      <nav class="nav">
+        <a href="#" class="logo">Best Pizza</a>
         <div class="nav__links">
           <ul class="links">
             <li>
@@ -52,7 +43,105 @@
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
+        <div class="nav__btns">
+          <button type="button" class="btn btn--cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart__quantity">0</span>
+          </button>
+          <button type="button" class="btn btn--toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="menu">
+        <nav class="menu__nav">
+          <ul>
+            <li>
+              <button class="btn btn--active" type="button">Pizza</button>
+            </li>
+            <li>
+              <button class="btn" type="button">Pasta</button>
+            </li>
+            <li>
+              <button class="btn" type="button">Salads</button>
+            </li>
+            <li>
+              <button class="btn" type="button">Drinks</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu__products">
+          <nav class="filters">
+            <ul>
+              <li>
+                <button class="btn" type="button">#vegeterian</button>
+              </li>
+              <li>
+                <button class="btn" type="button">#gluten free</button>
+              </li>
+              <li>
+                <button class="btn btn--active" type="button">all</button>
+              </li>
+            </ul>
+          </nav>
+          <div class="products">
+            <article class="product">
+              <img src="/img/pizza/0.png" alt="Roberto" />
+              <h1>Roberto</h1>
+              <p>
+                Roast beef, Bell peppers, Mushrooms, Onios, Cheese and Garlic.
+              </p>
+              <div>
+                <span>$18.99</span>
+                <button type="button" class="btn btn--icon">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+            </article>
+            <article class="product">
+              <img src="/img/pizza/1.png" alt="Luizhi" />
+              <h1>Roberto</h1>
+              <p>
+                Roast beef, Bell peppers, Mushrooms, Onios, Cheese and Garlic.
+              </p>
+              <div>
+                <span>$14.99</span>
+                <button type="button" class="btn btn--icon">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+            </article>
+            <article class="product">
+              <img src="/img/pizza/6.png" alt="Roberto" />
+              <h1>Pepperoni</h1>
+              <p>
+                Roast beef, Bell peppers, Mushrooms, Onios, Cheese and Garlic.
+              </p>
+              <div>
+                <span>$18.99</span>
+                <button type="button" class="btn btn--icon">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+            </article>
+            <article class="product">
+              <img src="/img/pizza/14.png" alt="Roberto" />
+              <h1>Marinara</h1>
+              <p>
+                Roast beef, Bell peppers, Mushrooms, Onios, Cheese and Garlic.
+              </p>
+              <div>
+                <span>$18.99</span>
+                <button type="button" class="btn btn--icon">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
