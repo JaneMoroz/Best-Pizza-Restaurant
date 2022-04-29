@@ -1,10 +1,22 @@
+import {
+  FaPizzaSlice,
+  FaFish,
+  FaDrumstickBite,
+  FaHamburger,
+  FaMugHot,
+  FaBeer,
+  FaWineGlassAlt,
+  FaCocktail,
+} from "react-icons/fa";
+import React from "react";
+
 /*
 ==============================
 Pizza
 ==============================
 */
 
-const pizza = [
+export const pizza = [
   {
     name: "Padrino",
     image: "./img/pizza/0.png",
@@ -279,10 +291,11 @@ Pasta
 ==============================
 */
 
-const pasta = [
+export const pasta = [
   {
     name: "Gnocchi",
     image: "./img/pasta/0.png",
+    type: "gluten-free",
     id: 0,
     price: "11.49",
     description: ["San Marzano Tomatoes", "Buffalo Mozzarella", "Basil"],
@@ -297,6 +310,7 @@ const pasta = [
   {
     name: "Olives Pasta",
     image: "./img/pasta/2.png",
+    type: "gluten-free",
     id: 2,
     price: "11.49",
     description: ["Olives", "Buffalo Mozzarella", "Basil"],
@@ -316,7 +330,7 @@ Salads
 ==============================
 */
 
-const salad = [
+export const salad = [
   {
     name: "Mixed Salat",
     image: "./img/salad/0.png",
@@ -415,7 +429,7 @@ Drinks
 ==============================
 */
 
-const drinks = [
+export const drinks = [
   {
     name: "Caffè Americano",
     image: "./img/drinks/0.png",
@@ -463,14 +477,6 @@ const drinks = [
     id: 5,
     price: "16.99",
     description: ["Gin", "Blueberry juice", "Lime"],
-  },
-  {
-    name: "Whiskey Sour",
-    image: "./img/drinks/6.png",
-    type: "cocktail",
-    id: 6,
-    price: "16.99",
-    description: ["Whiskey", "Lemon juice", "Sugar", "Egg"],
   },
   {
     name: "Spritz",
@@ -535,18 +541,47 @@ Sublinks
 ==============================
 */
 
-const sublinks = [
+export const sublinks = [
   {
     page: "menu",
     links: [
-      { section: "Main", label: "Pizza", icon: <></>, url: "/products" },
-      { section: "Main", label: "Meat", icon: <></>, url: "/products" },
-      { section: "Main", label: "Fish", icon: <></>, url: "/products" },
-      { section: "Main", label: "Burgers", icon: <></>, url: "/products" },
-      { section: "Drinks", label: "Coffee", icon: <></>, url: "/products" },
-      { section: "Drinks", label: "Cocktails", icon: <></>, url: "/products" },
-      { section: "Drinks", label: "Beer", icon: <></>, url: "/products" },
-      { section: "Drinks", label: "Wine", icon: <></>, url: "/products" },
+      {
+        label: "Pizza",
+        icon: <FaPizzaSlice className="icon" />,
+        url: "/products",
+      },
+      {
+        label: "Meat",
+        icon: <FaDrumstickBite className="icon" />,
+        url: "/products",
+      },
+      {
+        section: "Main",
+        label: "Fish",
+        icon: <FaFish className="icon" />,
+        url: "/products",
+      },
+      {
+        label: "Burgers",
+        icon: <FaHamburger className="icon" />,
+        url: "/products",
+      },
+      {
+        label: "Coffee",
+        icon: <FaMugHot className="icon" />,
+        url: "/products",
+      },
+      {
+        label: "Cocktails",
+        icon: <FaCocktail className="icon" />,
+        url: "/products",
+      },
+      { label: "Beer", icon: <FaBeer className="icon" />, url: "/products" },
+      {
+        label: "Wine",
+        icon: <FaWineGlassAlt className="icon" />,
+        url: "/products",
+      },
     ],
   },
   {
@@ -570,7 +605,7 @@ const sublinks = [
     ],
   },
   {
-    page: "Franchising",
+    page: "franchising",
     links: [
       { label: "More Information", url: "/bussiness" },
       { label: "Stories", url: "/bussiness" },
@@ -584,7 +619,7 @@ Testimonials
 ==============================
 */
 
-const testimonials = [
+export const testimonials = [
   {
     id: 1,
     name: "Susan Smith",
@@ -595,15 +630,15 @@ const testimonials = [
   {
     id: 2,
     name: "John Moore",
-    image: "./img/users/user-1.jpg",
+    image: "./img/users/user-2.jpg",
     test: "Quickest delivery ever",
     order: ["Pepperoni, Homemade Drink"],
   },
   {
     id: 3,
     name: "Anna Williams",
-    image: "./img/users/user-1.jpg",
-    test: "Loved pizza! Thank you!",
+    image: "./img/users/user-3.jpg",
+    test: "Loved your pizza! Thank you!",
     order: ["Macellato, White Truffle, Cappuccino"],
   },
 ];
