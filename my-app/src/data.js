@@ -624,21 +624,21 @@ export const testimonials = [
     id: 1,
     name: "Susan Smith",
     image: "./img/users/user-1.jpg",
-    test: "Best pizza ! I ordered 5 huge pizzas, delivery was super quick. I’ll order again soon",
+    text: "Best pizza ! I ordered 5 huge pizzas, delivery was super quick. I’ll order again soon",
     order: ["Marinara", "Georgia"],
   },
   {
     id: 2,
     name: "John Moore",
     image: "./img/users/user-2.jpg",
-    test: "Quickest delivery ever",
+    text: "Quickest delivery ever",
     order: ["Pepperoni, Homemade Drink"],
   },
   {
     id: 3,
     name: "Anna Williams",
     image: "./img/users/user-3.jpg",
-    test: "Loved your pizza! Thank you!",
+    text: "Loved your pizza! Thank you!",
     order: ["Macellato, White Truffle, Cappuccino"],
   },
 ];
@@ -649,7 +649,7 @@ QA
 ==============================
 */
 
-const questions = [
+export const questions = [
   {
     id: 1,
     title: "Is your pizza good?",

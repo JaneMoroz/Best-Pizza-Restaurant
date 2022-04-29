@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
 const MenuItem = ({ item }) => {
-  const { name, image, id, price, description } = item;
+  const { name, image, price, description } = item;
   return (
     <article className="product">
       <img src={image} alt={name} />

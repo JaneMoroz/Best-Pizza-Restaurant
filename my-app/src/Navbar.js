@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";

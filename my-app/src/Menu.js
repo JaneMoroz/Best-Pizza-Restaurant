@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 import { pasta, pizza, salad, drinks } from "./data";
 import MenuItem from "./MenuItem";

@@ -134,7 +134,7 @@ Buttons
 }
 
 .btn--icon .icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--secondary);
   background-color: var(--white);
 }
@@ -555,11 +555,13 @@ Menu
 
 .product p {
   text-align: center;
+  min-height: 6.2rem;
 }
 
 .product div {
   padding: 1rem 1.2rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -628,24 +630,49 @@ More Info
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 4.8rem;
-  padding: 6.4rem 4.8rem 3.2rem 4.8rem;
+  padding: 3.2rem 4.8rem 3.2rem 4.8rem;
 }
 
 .testimonials {
+  padding: 3.2rem 1.2rem 1.2rem 1.2rem;
+  overflow-x: hidden;
+}
+
+.testimonials__inner {
+  height: 18rem;
+  width: 100%;
   position: relative;
-  height: max-content;
+  display: flex;
 }
 
 .testimonial {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
   display: grid;
   grid-template-columns: 1fr 3fr;
+  column-gap: 1rem;
   border: 1px solid var(--secondary);
   border-radius: 2rem;
   padding: 1.6rem 3.2rem;
+  transition: var(--transition);
 }
 
-.testimonial i {
+.testimonial.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+.testimonial.lastSlide {
+  transform: translateX(-100%);
+}
+.testimonial.nextSlide {
+  transform: translateX(100%);
+}
+
+.testimonial .icon {
   position: absolute;
   top: 5%;
   right: 5%;
@@ -658,6 +685,8 @@ More Info
   height: 10rem;
   width: 10rem;
   transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: var(--light-shadow);
 }
 
 .testimonial__img img {
@@ -710,6 +739,10 @@ More Info
   padding: 1.6rem 3.2rem;
 }
 
+.question p {
+  transition: var(--transition);
+}
+
 .question header {
   display: flex;
   justify-content: space-between;
@@ -723,7 +756,7 @@ More Info
 
 @media only screen and (max-width: 75em) {
   .more-info-section {
-    padding: 6.4rem 3.2rem 3.2rem 3.2rem;
+    padding: 3.2rem 3.2rem 3.2rem 3.2rem;
   }
 }
 
@@ -736,7 +769,7 @@ More Info
   }
 
   .testimonials {
-    max-width: 60rem;
+    width: 60rem;
   }
 
   .qa {
@@ -746,9 +779,17 @@ More Info
 
 @media only screen and (max-width: 37.5em) {
   .testimonial {
-    padding: 0 3.2rem;
+    padding: 2rem 3.2rem;
     display: flex;
     flex-direction: column;
+  }
+
+  .testimonials {
+    width: 40rem;
+  }
+
+  .testimonials__inner {
+    height: 26rem;
   }
 
   .testimonial__text {
