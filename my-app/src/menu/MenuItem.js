@@ -3,6 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 const MenuItem = ({ item }) => {
   const { name, image, price, description } = item;
+
   return (
     <article className="product">
       <img src={image} alt={name} />

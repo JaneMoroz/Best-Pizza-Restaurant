@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Menu from "./Menu";
-import Testimonials from "./Testimonials";
-import Questions from "./Questions";
+import Navbar from "./navigation/Navbar";
+import Menu from "./menu/Menu";
+import Testimonials from "./testimonials/Testimonials";
+import Questions from "./question/Questions";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <main className="container">
         <Menu />
-        <section class="more-info-section">
+        <section className="more-info-section">
           <Testimonials />
           <Questions />
         </section>

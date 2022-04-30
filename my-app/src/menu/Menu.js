@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useGlobalContext } from "./context";
-import { pasta, pizza, salad, drinks } from "./data";
+import { useGlobalContext } from "../context";
+import { pasta, pizza, salad, drinks } from "../data";
 import MenuItem from "./MenuItem";
 
 const Menu = () => {

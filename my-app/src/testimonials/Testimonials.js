@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { testimonials } from "./data";
+import { testimonials } from "../data";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import Testimonial from "./Testimonial";
 
@@ -27,7 +27,7 @@ function Testimonials() {
   };
 
   return (
-    <div class="testimonials">
+    <div className="testimonials">
       <div className="testimonials__inner">
         {testimonials.map((testimonial, testimonialIndex) => {
           const length = testimonials.length;

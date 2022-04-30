@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../context";
 
 const Submenu = () => {
   const {
@@ -18,7 +18,7 @@ const Submenu = () => {
     submenu.style.left = `${center}px`;
     submenu.style.top = `${bottom}px`;
 
-    if (links.length == 2) {
+    if (links.length === 2) {
       setColumns("");
     }
 

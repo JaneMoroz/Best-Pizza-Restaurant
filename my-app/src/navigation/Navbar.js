@@ -2,11 +2,19 @@ import React from "react";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";
-import Cart from "./Cart";
-import { useGlobalContext } from "./context";
+import Cart from "../cart/Cart";
+import { useGlobalContext } from "../context";
 
 const Navbar = () => {
-  const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
+  const {
+    openSidebar,
+    openSubmenu,
+    closeSubmenu,
+    isCartOpen,
+    openCart,
+    closeCart,
+    amount,
+  } = useGlobalContext();
 
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
@@ -18,6 +26,9 @@ const Navbar = () => {
 
   const handleSubmenu = (e) => {
     if (!e.target.classList.contains("link-btn")) {
+      closeSubmenu();
+    }
+    if (e.target.classList.contains("nav__btns")) {
       closeSubmenu();
     }
   };
@@ -71,10 +82,14 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="nav__btns">
-          <button type="button" className="btn btn--cart">
+        <div className="nav__btns" onMouseOver={handleSubmenu}>
+          <button
+            type="button"
+            className="btn btn--cart"
+            onClick={isCartOpen ? closeCart : openCart}
+          >
             <FaShoppingCart className="icon" />
-            <span className="cart__quantity">0</span>
+            <span className="cart__quantity">{amount}</span>
           </button>
           <button
             type="button"

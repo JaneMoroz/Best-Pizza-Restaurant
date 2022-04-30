@@ -3,12 +3,12 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const Question = ({ question }) => {
   const [showInfo, setShowInfo] = useState(false);
-  const { id, title, info } = question;
+  const { title, info } = question;
   return (
-    <article key={id} class="question">
+    <article className="question">
       <header>
         <h3>{title}</h3>
-        <button class="btn btn--qa" onClick={() => setShowInfo(!showInfo)}>
+        <button className="btn btn--qa" onClick={() => setShowInfo(!showInfo)}>
           {showInfo ? <FaMinus /> : <FaPlus />}
         </button>
       </header>
