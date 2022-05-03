@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 import { menu, pasta, pizza, salad, drinks } from "../data";
 import MenuItem from "./MenuItem";
 
 const Menu = () => {
-  const { closeSubmenu } = useGlobalContext();
+  const { closeSubmenu, searchMode, setSearchMode, searchTerm } =
+    useGlobalContext();
 
   const [category, setCategory] = useState("pizza");
   const [filter, setFilter] = useState("all");
@@ -14,6 +15,22 @@ const Menu = () => {
 
   const allTypes = ["all", ...new Set(menuItems.map((item) => item.type))];
   const [menuTypes, setMenuTypes] = useState(allTypes);
+
+  useEffect(() => {
+    if (searchMode) {
+      setCategory("");
+      setMenuTypes([]);
+      if (!searchTerm) {
+        setMenuItems(menu);
+      }
+      if (searchTerm) {
+        const newMenuItems = menu.filter((menuItem) =>
+          menuItem.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setMenuItems(newMenuItems);
+      }
+    }
+  }, [searchMode, searchTerm]);
 
   const filterItems = (type) => {
     if (type === "all") {
@@ -28,7 +45,8 @@ const Menu = () => {
     setFilter(type);
   };
 
-  const handleClick = (category) => {
+  const loadMenu = (category) => {
+    setSearchMode(false);
     setCategory(category);
     setMenuItems(menu.filter((menuItem) => menuItem.category === category));
     const allTypes = [
@@ -51,7 +69,7 @@ const Menu = () => {
             <button
               className={`btn ${category === "pizza" ? "btn--active" : ""}`}
               type="button"
-              onClick={() => handleClick("pizza")}
+              onClick={() => loadMenu("pizza")}
             >
               Pizza
             </button>
@@ -60,7 +78,7 @@ const Menu = () => {
             <button
               className={`btn ${category === "pasta" ? "btn--active" : ""}`}
               type="button"
-              onClick={() => handleClick("pasta")}
+              onClick={() => loadMenu("pasta")}
             >
               Pasta
             </button>
@@ -69,7 +87,7 @@ const Menu = () => {
             <button
               className={`btn ${category === "salad" ? "btn--active" : ""}`}
               type="button"
-              onClick={() => handleClick("salad")}
+              onClick={() => loadMenu("salad")}
             >
               Salads
             </button>
@@ -78,7 +96,7 @@ const Menu = () => {
             <button
               className={`btn ${category === "drink" ? "btn--active" : ""}`}
               type="button"
-              onClick={() => handleClick("drink")}
+              onClick={() => loadMenu("drink")}
             >
               Drinks
             </button>

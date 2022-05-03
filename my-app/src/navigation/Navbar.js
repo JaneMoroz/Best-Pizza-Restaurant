@@ -1,12 +1,15 @@
 import React from "react";
-import { FaShoppingCart, FaBars } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaSearch } from "react-icons/fa";
 import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";
 import Cart from "../cart/Cart";
+import SearchForm from "./SearchForm";
 import { useGlobalContext } from "../context";
 
 const Navbar = () => {
   const {
+    searchMode,
+    setSearchMode,
     openSidebar,
     openSubmenu,
     closeSubmenu,
@@ -83,6 +86,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="nav__btns" onMouseOver={handleSubmenu}>
+          <button
+            type="button"
+            className="btn btn--search"
+            onClick={() => setSearchMode(!searchMode)}
+          >
+            <FaSearch className="icon" />
+          </button>
+          <SearchForm />
           <button
             type="button"
             className="btn btn--cart"

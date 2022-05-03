@@ -67,6 +67,8 @@ export const AppProvider = ({ children }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [location, setLocation] = useState({});
   const [page, setPage] = useState({ page: "", links: [] });
+  const [searchMode, setSearchMode] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const openSidebar = () => {
     setIsSidebarOpen(true);
@@ -104,6 +106,10 @@ export const AppProvider = ({ children }) => {
         closeSidebar,
         location,
         page,
+        searchMode,
+        setSearchMode,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {children}

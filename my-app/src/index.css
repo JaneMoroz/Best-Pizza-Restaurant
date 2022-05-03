@@ -161,6 +161,18 @@ Buttons
   color: var(--secondary);
 }
 
+.btn--search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 2.4rem;
+}
+
+.btn--search > .icon {
+  font-size: 2.4rem;
+  color: var(--secondary);
+}
+
 .btn--cart > span {
   font-size: 1.4rem;
   height: 2.2rem;
@@ -213,6 +225,7 @@ Navbar
 }
 
 .nav__btns {
+  position: relative;
   display: flex;
   margin-right: 4.8rem;
 }
@@ -260,6 +273,50 @@ Navbar
   .links a {
     letter-spacing: 0.15rem;
   }
+}
+
+/* 
+====== 
+Form
+======
+*/
+.search-form {
+  display: none;
+  position: absolute;
+  width: 20rem;
+  top: 100%;
+  left: 0;
+  transform: translate(-40%, 30%);
+  background: var(--white);
+  padding: 1;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  box-shadow: var(--light-shadow);
+}
+
+.search-form.show {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  border-color: transparent;
+  background: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--secondary);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+}
+
+.form-control input:focus {
+  outline: none;
+}
+
+.btn--form {
+  position: absolute;
+  top: 0.28rem;
+  right: 1rem;
 }
 
 /*
