@@ -1,91 +1,46 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../context";
-import { pasta, pizza, salad, drinks } from "../data";
+import { menu, pasta, pizza, salad, drinks } from "../data";
 import MenuItem from "./MenuItem";
 
 const Menu = () => {
   const { closeSubmenu } = useGlobalContext();
 
-  const [menuItems, setMenuItems] = useState(pizza);
   const [category, setCategory] = useState("pizza");
   const [filter, setFilter] = useState("all");
+  const [menuItems, setMenuItems] = useState(
+    menu.filter((menuItem) => menuItem.category === category)
+  );
 
   const allTypes = ["all", ...new Set(menuItems.map((item) => item.type))];
   const [menuTypes, setMenuTypes] = useState(allTypes);
 
   const filterItems = (type) => {
-    if (category === "pizza") {
-      if (type === "all") {
-        setMenuItems(pizza);
-        setFilter("all");
-        return;
-      }
-      const newItems = pizza.filter((item) => item.type === type);
-      setMenuItems(newItems);
-      setFilter(type);
+    if (type === "all") {
+      setMenuItems(menu.filter((menuItem) => menuItem.category === category));
+      setFilter("all");
+      return;
     }
-
-    if (category === "pasta") {
-      if (type === "all") {
-        setMenuItems(pasta);
-        setFilter("all");
-        return;
-      }
-      const newItems = pasta.filter((item) => item.type === type);
-      setMenuItems(newItems);
-      setFilter(type);
-    }
-
-    if (category === "salads") {
-      if (type === "all") {
-        setMenuItems(salad);
-        setFilter("all");
-        return;
-      }
-      const newItems = salad.filter((item) => item.type === type);
-      setMenuItems(newItems);
-      setFilter(type);
-    }
-
-    if (category === "drinks") {
-      if (type === "all") {
-        setMenuItems(drinks);
-        setFilter("all");
-        return;
-      }
-      const newItems = drinks.filter((item) => item.type === type);
-      setMenuItems(newItems);
-      setFilter(type);
-    }
+    const newItems = menu.filter(
+      (menuItem) => menuItem.category === category && menuItem.type === type
+    );
+    setMenuItems(newItems);
+    setFilter(type);
   };
 
   const handleClick = (category) => {
+    setCategory(category);
+    setMenuItems(menu.filter((menuItem) => menuItem.category === category));
+    const allTypes = [
+      "all",
+      ...new Set(
+        menu
+          .filter((item) => item.category === category)
+          .map((item) => item.type)
+      ),
+    ];
+    setMenuTypes(allTypes);
     setFilter("all");
-    if (category === "pizza") {
-      setCategory("pizza");
-      setMenuItems(pizza);
-
-      const allTypes = ["all", ...new Set(pizza.map((item) => item.type))];
-      setMenuTypes(allTypes);
-    }
-    if (category === "pasta") {
-      setCategory("pasta");
-      setMenuItems(pasta);
-      const allTypes = ["all", ...new Set(pasta.map((item) => item.type))];
-      setMenuTypes(allTypes);
-    }
-    if (category === "salads") {
-      setCategory("salads");
-      setMenuItems(salad);
-      const allTypes = ["all", ...new Set(salad.map((item) => item.type))];
-      setMenuTypes(allTypes);
-    }
-    if (category === "drinks") {
-      setCategory("drinks");
-      setMenuItems(drinks);
-      const allTypes = ["all", ...new Set(drinks.map((item) => item.type))];
-      setMenuTypes(allTypes);
-    }
   };
 
   return (
@@ -112,18 +67,18 @@ const Menu = () => {
           </li>
           <li>
             <button
-              className={`btn ${category === "salads" ? "btn--active" : ""}`}
+              className={`btn ${category === "salad" ? "btn--active" : ""}`}
               type="button"
-              onClick={() => handleClick("salads")}
+              onClick={() => handleClick("salad")}
             >
               Salads
             </button>
           </li>
           <li>
             <button
-              className={`btn ${category === "drinks" ? "btn--active" : ""}`}
+              className={`btn ${category === "drink" ? "btn--active" : ""}`}
               type="button"
-              onClick={() => handleClick("drinks")}
+              onClick={() => handleClick("drink")}
             >
               Drinks
             </button>
