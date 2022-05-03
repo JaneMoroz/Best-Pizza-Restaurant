@@ -30,6 +30,9 @@ const Menu = () => {
         setMenuItems(newMenuItems);
       }
     }
+    if (!searchMode && category === "") {
+      loadMenu("pizza");
+    }
   }, [searchMode, searchTerm]);
 
   const filterItems = (type) => {
