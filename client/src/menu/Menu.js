@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 import { menu, pasta, pizza, salad, drinks } from "../data";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import MenuItem from "./MenuItem";
+import paginate from "../utils";
 
 const Menu = () => {
   const { closeSubmenu, searchMode, setSearchMode, searchTerm } =
     useGlobalContext();
 
-  const [category, setCategory] = useState("pizza");
-  const [filter, setFilter] = useState("all");
-  const [menuItems, setMenuItems] = useState(
-    menu.filter((menuItem) => menuItem.category === category)
-  );
+  const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState("");
+  const [filter, setFilter] = useState("");
+  const [menuItems, setMenuItems] = useState([]);
+  const [menuTypes, setMenuTypes] = useState([]);
 
-  const allTypes = ["all", ...new Set(menuItems.map((item) => item.type))];
-  const [menuTypes, setMenuTypes] = useState(allTypes);
+  useEffect(() => {
+    setCategory("pizza");
+    setFilter("all");
+    setMenuItems(menu.filter((menuItem) => menuItem.category === category));
+    const allTypes = ["all", ...new Set(menuItems.map((item) => item.type))];
+    setMenuTypes(allTypes);
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     if (searchMode) {
@@ -36,9 +44,11 @@ const Menu = () => {
   }, [searchMode, searchTerm]);
 
   const filterItems = (type) => {
+    setLoading(true);
     if (type === "all") {
       setMenuItems(menu.filter((menuItem) => menuItem.category === category));
       setFilter("all");
+      setLoading(false);
       return;
     }
     const newItems = menu.filter(
@@ -46,9 +56,11 @@ const Menu = () => {
     );
     setMenuItems(newItems);
     setFilter(type);
+    setLoading(false);
   };
 
   const loadMenu = (category) => {
+    setLoading(true);
     setSearchMode(false);
     setCategory(category);
     setMenuItems(menu.filter((menuItem) => menuItem.category === category));
@@ -62,7 +74,12 @@ const Menu = () => {
     ];
     setMenuTypes(allTypes);
     setFilter("all");
+    setLoading(false);
   };
+
+  if (loading) {
+    return <div className="loader"></div>;
+  }
 
   return (
     <section className="menu" onMouseOver={closeSubmenu}>
@@ -131,6 +148,17 @@ const Menu = () => {
             return <MenuItem key={item.id} item={item} />;
           })}
         </div>
+      </div>
+      <div className="pagination">
+        <button className="btn btn--secondary">
+          <FaArrowLeft />
+        </button>
+        <button className="btn btn--secondary">1</button>
+        <button className="btn btn--secondary">2</button>
+        <button className="btn btn--secondary">3</button>
+        <button className="btn btn--secondary">
+          <FaArrowRight />
+        </button>
       </div>
     </section>
   );
