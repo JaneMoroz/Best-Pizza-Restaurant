@@ -128,8 +128,17 @@ Buttons
   border-radius: 1rem;
 }
 
-.btn--secondary.active--btn {
-  background-color: var(--primary);
+.btn--outlined {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--white);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 1rem;
+}
+
+.btn--outlined.btn--active {
+  background-color: var(--secondary);
+  color: var(--white);
 }
 
 .btn--text {
@@ -603,6 +612,7 @@ Menu
   padding-top: 3.2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
   row-gap: 3.2rem;
@@ -636,8 +646,8 @@ Menu
 }
 
 .pagination {
-  grid-column: 1 / span 2;
-  margin: 2.4rem auto 1.4rem auto;
+  text-align: center;
+  margin: 2.4rem 0 1.4rem 0;
 }
 
 .pagination .btn {
@@ -663,6 +673,7 @@ Menu
   }
   .products {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
   .filters ul {
     padding-right: 0;

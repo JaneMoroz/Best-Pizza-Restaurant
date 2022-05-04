@@ -15,6 +15,11 @@ const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [menuTypes, setMenuTypes] = useState([]);
 
+  // Pagination
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(0);
+  const [displayMenuItems, setDisplayMenuItems] = useState([]);
+
   useEffect(() => {
     setCategory("pizza");
     setFilter("all");
@@ -24,18 +29,32 @@ const Menu = () => {
     setLoading(false);
   }, []);
 
+  // Without loading can't get data from menu items, because it is underfined
+  useEffect(() => {
+    if (loading) return;
+    // Pagination
+    setData(paginate(menuItems));
+    setDisplayMenuItems(paginate(menuItems)[page]);
+  }, [page, menuItems]);
+
   useEffect(() => {
     if (searchMode) {
       setCategory("");
       setMenuTypes([]);
       if (!searchTerm) {
+        setLoading(true);
         setMenuItems(menu);
+        setPage(0);
+        setLoading(false);
       }
       if (searchTerm) {
+        setLoading(true);
         const newMenuItems = menu.filter((menuItem) =>
           menuItem.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setMenuItems(newMenuItems);
+        setPage(0);
+        setLoading(false);
       }
     }
     if (!searchMode && category === "") {
@@ -56,6 +75,7 @@ const Menu = () => {
     );
     setMenuItems(newItems);
     setFilter(type);
+    setPage(0);
     setLoading(false);
   };
 
@@ -74,7 +94,32 @@ const Menu = () => {
     ];
     setMenuTypes(allTypes);
     setFilter("all");
+    setPage(0);
     setLoading(false);
+  };
+
+  const handlePage = (index) => {
+    setPage(index);
+  };
+
+  const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1;
+      if (nextPage > data.length - 1) {
+        nextPage = 0;
+      }
+      return nextPage;
+    });
+  };
+
+  const prevPage = () => {
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1;
+      if (prevPage < 0) {
+        prevPage = data.length - 1;
+      }
+      return prevPage;
+    });
   };
 
   if (loading) {
@@ -144,21 +189,31 @@ const Menu = () => {
           </ul>
         </nav>
         <div className="products">
-          {menuItems.map((item) => {
+          {displayMenuItems.map((item) => {
             return <MenuItem key={item.id} item={item} />;
           })}
         </div>
-      </div>
-      <div className="pagination">
-        <button className="btn btn--secondary">
-          <FaArrowLeft />
-        </button>
-        <button className="btn btn--secondary">1</button>
-        <button className="btn btn--secondary">2</button>
-        <button className="btn btn--secondary">3</button>
-        <button className="btn btn--secondary">
-          <FaArrowRight />
-        </button>
+        <div className="pagination">
+          <button className="btn btn--outlined" onClick={prevPage}>
+            <FaArrowLeft />
+          </button>
+          {data.map((item, index) => {
+            return (
+              <button
+                key={index}
+                className={`btn btn--outlined ${
+                  index === page ? "btn--active" : ""
+                }`}
+                onClick={() => handlePage(index)}
+              >
+                {index + 1}
+              </button>
+            );
+          })}
+          <button className="btn btn--outlined" onClick={nextPage}>
+            <FaArrowRight />
+          </button>
+        </div>
       </div>
     </section>
   );
