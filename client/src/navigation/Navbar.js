@@ -4,9 +4,11 @@ import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";
 import Cart from "../cart/Cart";
 import SearchForm from "./SearchForm";
+import { Link, useParams } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 const Navbar = () => {
+  const { id } = useParams();
   const {
     searchMode,
     setSearchMode,
@@ -39,9 +41,9 @@ const Navbar = () => {
   return (
     <header className="container">
       <nav className="nav">
-        <a href="#" className="logo">
+        <Link to={"/"} className="logo">
           Best Pizza
-        </a>
+        </Link>
         <div className="nav__links" onMouseOver={handleSubmenu}>
           <ul className="links">
             <li>
@@ -86,13 +88,24 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="nav__btns" onMouseOver={handleSubmenu}>
-          <button
-            type="button"
-            className="btn btn--search"
-            onClick={() => setSearchMode(!searchMode)}
-          >
-            <FaSearch className="icon" />
-          </button>
+          {id ? (
+            <Link
+              to={"/"}
+              type="button"
+              className="btn btn--search"
+              onClick={() => setSearchMode(!searchMode)}
+            >
+              <FaSearch className="icon" />
+            </Link>
+          ) : (
+            <button
+              type="button"
+              className="btn btn--search"
+              onClick={() => setSearchMode(!searchMode)}
+            >
+              <FaSearch className="icon" />
+            </button>
+          )}
           <SearchForm />
           <button
             type="button"

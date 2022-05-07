@@ -9,7 +9,6 @@ const getStorageCart = () => {
   if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
   }
-  console.log(cart);
   return cart;
 };
 
