@@ -1,21 +1,17 @@
 import React from "react";
-import Navbar from "./navigation/Navbar";
-import Menu from "./menu/Menu";
-import Testimonials from "./testimonials/Testimonials";
-import Questions from "./question/Questions";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SingleItem from "./pages/SingleItem";
+import SharedLayout from "./SharedLayout";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <main className="container">
-        <Menu />
-        <section className="more-info-section">
-          <Testimonials />
-          <Questions />
-        </section>
-      </main>
-    </>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="menu/:id" element={<SingleItem />} />
+      </Route>
+    </Routes>
   );
 }
 

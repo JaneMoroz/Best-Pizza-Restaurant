@@ -8,6 +8,26 @@ const reducer = (state, action) => {
   if (action.type === "CLEAR_CART") {
     return { ...state, cart: [] };
   }
+  if (action.type === "ADD_TO_CART") {
+    const { image, name, price, id } = action.payload;
+
+    if (
+      state.cart.length !== 0 &&
+      state.cart.find((cartItem) => cartItem.id === id)
+    ) {
+      let tempCart = state.cart.map((cartItem) => {
+        if (cartItem.id === id) {
+          return { ...cartItem, amount: cartItem.amount + 1 };
+        }
+        return cartItem;
+      });
+      return { ...state, cart: tempCart };
+    }
+
+    const newItem = { image, name, price, id, amount: 1 };
+    return { ...state, cart: [...state.cart, newItem] };
+  }
+
   if (action.type === "REMOVE") {
     return {
       ...state,

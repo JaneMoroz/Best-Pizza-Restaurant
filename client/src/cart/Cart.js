@@ -13,9 +13,12 @@ const Cart = () => {
           <FaTimes className="icon" />
         </button>
       </header>
-      {cart.map((item) => {
-        return <CartItem key={item.id} {...item} />;
-      })}
+      <div className="cart-items-container">
+        {cart.length !== 0 &&
+          cart.map((item) => {
+            return <CartItem key={item.id} {...item} />;
+          })}
+      </div>
       <div className="total">
         <div className="total__text">
           <span>Total:</span>

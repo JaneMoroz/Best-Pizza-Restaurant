@@ -1,20 +1,29 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const MenuItem = ({ item }) => {
-  const { name, image, price, description } = item;
+  const { id, name, image, price, description } = item;
+  const { addToCart } = useGlobalContext();
 
   return (
     <article className="product">
-      <img src={image} alt={name} />
-      <h1>{name}</h1>
-      <p>
-        {description.join(", ").substring(0, 60)}
-        ...
-      </p>
+      <Link to={`menu/${id}`}>
+        <img src={image} alt={name} />
+        <h1>{name}</h1>
+        <p>
+          {description.join(", ").substring(0, 60)}
+          ...
+        </p>
+      </Link>
       <div>
         <span>{`$${price}`}</span>
-        <button type="button" className="btn btn--icon">
+        <button
+          type="button"
+          className="btn btn--icon"
+          onClick={() => addToCart({ id, name, image, price })}
+        >
           <FaShoppingCart className="icon" />
         </button>
       </div>

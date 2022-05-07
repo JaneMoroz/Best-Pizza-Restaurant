@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
-import { menu, pasta, pizza, salad, drinks } from "../data";
+import { menu } from "../data";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import MenuItem from "./MenuItem";
 import paginate from "../utils";
@@ -189,9 +189,10 @@ const Menu = () => {
           </ul>
         </nav>
         <div className="products">
-          {displayMenuItems.map((item) => {
-            return <MenuItem key={item.id} item={item} />;
-          })}
+          {displayMenuItems &&
+            displayMenuItems.map((item) => {
+              return <MenuItem key={item.id} item={item} />;
+            })}
         </div>
         <div className="pagination">
           <button className="btn btn--outlined" onClick={prevPage}>

@@ -4,32 +4,18 @@ import reducer from "./reducer";
 
 const AppContext = React.createContext();
 
-const cartItems = [
-  {
-    name: "Dark & Stormy",
-    image: "./img/drinks/11.png",
-    id: 0,
-    price: "21.99",
-    amount: 2,
-  },
-  {
-    name: "Macellato ",
-    image: "./img/pizza/1.png",
-    id: 1,
-    price: "25.99",
-    amount: 1,
-  },
-  {
-    name: "Olives Pasta",
-    image: "./img/pasta/2.png",
-    id: 2,
-    price: "11.49",
-    amount: 1,
-  },
-];
+const getStorageCart = () => {
+  let cart = [];
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+  }
+  console.log(cart);
+  return cart;
+};
+
 // Cart
 const initialState = {
-  cart: cartItems,
+  cart: getStorageCart(),
   total: 0,
   amount: 0,
   isCartOpen: false,
@@ -51,6 +37,10 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: "CLEAR_CART" });
   };
 
+  const addToCart = (item) => {
+    dispatch({ type: "ADD_TO_CART", payload: item });
+  };
+
   const remove = (id) => {
     dispatch({ type: "REMOVE", payload: id });
   };
@@ -61,6 +51,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: "GET_TOTALS" });
+    localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.cart]);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -96,6 +87,7 @@ export const AppProvider = ({ children }) => {
         openCart,
         closeCart,
         clearCart,
+        addToCart,
         remove,
         toggleAmount,
         isSubmenuOpen,
