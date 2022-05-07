@@ -975,17 +975,18 @@ Single Product
 */
 
 .single-product {
-  max-width: 60rem;
+  max-width: 70rem;
   min-height: 40rem;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
 }
 
 .container-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 2.4rem;
+  column-gap: 3.6rem;
 }
 
 .container-center img {
@@ -1015,4 +1016,14 @@ Single Product
 .container-center .btn {
   font-size: 2rem;
   margin-right: 1.6rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .container-center {
+    min-height: 60rem;
+    flex-direction: column;
+    max-width: 35rem;
+    justify-content: center;
+    align-items: center;
+  }
 }
