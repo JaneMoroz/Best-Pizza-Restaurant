@@ -16,28 +16,28 @@ const cart_reducer = (state, action) => {
     return { ...state, isCartOpen: false };
   }
   if (action.type === ADD_TO_CART) {
-    // const { image, name, price, id } = action.payload;
-    // const tempItem = state.cart.find((i) => i.id === id);
-    // if (tempItem) {
-    //   const tempCart = state.cart.map((cartItem) => {
-    //     if (cartItem.id === id) {
-    //       let newAmount = cartItem.amount + amount;
-    //       return { ...cartItem, amount: newAmount };
-    //     } else {
-    //       return cartItem;
-    //     }
-    //   });
-    //   return { ...state, cart: tempCart };
-    // } else {
-    //   const newItem = {
-    //     image,
-    //     name,
-    //     price,
-    //     id,
-    //     amount: 1,
-    //   };
-    //   return { ...state, cart: [...state.cart, newItem] };
-    // }
+    const { image, name, price, id } = action.payload;
+    const tempItem = state.cart.find((i) => i.id === id);
+    if (tempItem) {
+      const tempCart = state.cart.map((cartItem) => {
+        if (cartItem.id === id) {
+          let newAmount = cartItem.amount + 1;
+          return { ...cartItem, amount: newAmount };
+        } else {
+          return cartItem;
+        }
+      });
+      return { ...state, cart: tempCart };
+    } else {
+      const newItem = {
+        image,
+        name,
+        price,
+        id,
+        amount: 1,
+      };
+      return { ...state, cart: [...state.cart, newItem] };
+    }
     return { ...state };
   }
   if (action.type === REMOVE_CART_ITEM) {
