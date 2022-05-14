@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useGlobalContext } from "../context";
+import { useMenuContext } from "../../context/menu_context";
 
 const Submenu = () => {
   const {
     isSubmenuOpen,
-    location,
+    submenuLocation,
     page: { links },
-  } = useGlobalContext();
+  } = useMenuContext();
 
   const container = useRef(null);
   const [columns, setColumns] = useState("col-2");
@@ -14,7 +14,7 @@ const Submenu = () => {
   useEffect(() => {
     setColumns("col-2");
     const submenu = container.current;
-    const { center, bottom } = location;
+    const { center, bottom } = submenuLocation;
     submenu.style.left = `${center}px`;
     submenu.style.top = `${bottom}px`;
 
@@ -28,7 +28,7 @@ const Submenu = () => {
     if (links.length > 6) {
       setColumns("col-4");
     }
-  }, [location, links]);
+  }, [submenuLocation, links]);
 
   return (
     <aside className={`submenu ${isSubmenuOpen ? "show" : ""}`} ref={container}>

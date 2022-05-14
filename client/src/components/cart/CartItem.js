@@ -1,9 +1,9 @@
 import React from "react";
-import { useGlobalContext } from "../context";
+import { useCartContext } from "../../context/cart_context";
 import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
 
 const CartItem = ({ id, name, image, price, amount }) => {
-  const { remove, toggleAmount } = useGlobalContext();
+  const { remove, toggleAmount } = useCartContext();
   return (
     <article className="cart-item">
       <div className="cart-item__img">

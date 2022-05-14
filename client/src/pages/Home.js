@@ -1,8 +1,5 @@
 import React from "react";
-import Navbar from "../navigation/Navbar";
-import Menu from "../menu/Menu";
-import Testimonials from "../testimonials/Testimonials";
-import Questions from "../question/Questions";
+import Menu from "../components/menu/Menu";
 
 function Home() {
   return (

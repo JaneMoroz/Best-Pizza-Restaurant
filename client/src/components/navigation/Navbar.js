@@ -5,21 +5,13 @@ import Submenu from "./Submenu";
 import Cart from "../cart/Cart";
 import SearchForm from "./SearchForm";
 import { Link, useParams } from "react-router-dom";
-import { useGlobalContext } from "../context";
+import { useMenuContext } from "../../context/menu_context";
+import { useCartContext } from "../../context/cart_context";
 
 const Navbar = () => {
   const { id } = useParams();
-  const {
-    searchMode,
-    setSearchMode,
-    openSidebar,
-    openSubmenu,
-    closeSubmenu,
-    isCartOpen,
-    openCart,
-    closeCart,
-    amount,
-  } = useGlobalContext();
+  const { openSidebar, openSubmenu, closeSubmenu } = useMenuContext();
+  const { isCartOpen, openCart, closeCart, total_items } = useCartContext();
 
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
@@ -93,7 +85,7 @@ const Navbar = () => {
               to={"/"}
               type="button"
               className="btn btn--search"
-              onClick={() => setSearchMode(!searchMode)}
+              // onClick={() => setSearchMode(!searchMode)}
             >
               <FaSearch className="icon" />
             </Link>
@@ -101,7 +93,7 @@ const Navbar = () => {
             <button
               type="button"
               className="btn btn--search"
-              onClick={() => setSearchMode(!searchMode)}
+              // onClick={() => setSearchMode(!searchMode)}
             >
               <FaSearch className="icon" />
             </button>
@@ -113,7 +105,7 @@ const Navbar = () => {
             onClick={isCartOpen ? closeCart : openCart}
           >
             <FaShoppingCart className="icon" />
-            <span className="cart__quantity">{amount}</span>
+            <span className="cart__quantity">{total_items}</span>
           </button>
           <button
             type="button"

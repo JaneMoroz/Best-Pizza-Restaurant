@@ -1,10 +1,11 @@
 import React from "react";
-import { useGlobalContext } from "../context";
+import { useCartContext } from "../../context/cart_context";
 import { FaTimes } from "react-icons/fa";
 import CartItem from "./CartItem";
 
 const Cart = () => {
-  const { cart, isCartOpen, total, clearCart, closeCart } = useGlobalContext();
+  const { cart, isCartOpen, total_amount, clearCart, closeCart } =
+    useCartContext();
   return (
     <aside className={`cart-details ${isCartOpen ? "show" : ""}`}>
       <header className="header">
@@ -22,7 +23,7 @@ const Cart = () => {
       <div className="total">
         <div className="total__text">
           <span>Total:</span>
-          <span>{`$${total}`}</span>
+          <span>{`$${total_amount}`}</span>
         </div>
         <a href="#" className="btn btn--secondary">
           Order

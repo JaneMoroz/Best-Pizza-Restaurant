@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { menu } from "../data";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../context";
+import { useCartContext } from "../context/cart_context";
 
 const SingleItem = () => {
-  const { addToCart } = useGlobalContext();
+  const { addToCart } = useCartContext();
   const { id } = useParams();
   const item = menu.find((item) => item.id === +id);
   return (

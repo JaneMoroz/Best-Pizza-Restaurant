@@ -1,11 +1,11 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../context";
+import { useCartContext } from "../../context/cart_context";
 
 const MenuItem = ({ item }) => {
   const { id, name, image, price, description } = item;
-  const { addToCart } = useGlobalContext();
+  const { addToCart } = useCartContext();
 
   return (
     <article className="product">
