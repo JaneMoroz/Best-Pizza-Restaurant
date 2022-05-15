@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/menu_reducer";
-import { menu as originalMenu, sublinks } from "../data";
+import { menu as originalMenu, sublinks, menuOptions } from "../data";
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -15,7 +15,6 @@ import {
   GET_MENU_ITEM_SUCCESS,
   GET_MENU_ITEM_ERROR,
 } from "../actions";
-import { useFilterContext } from "./filter_context";
 
 const initialState = {
   isSidebarOpen: false,
@@ -29,6 +28,7 @@ const initialState = {
   single_menu_item_loading: false,
   single_menu_item_error: false,
   single_menu_item: {},
+  single_menu_item_options: [],
 };
 
 const MenuContext = React.createContext();
@@ -67,8 +67,19 @@ export const MenuProvider = ({ children }) => {
   const fetchMenuItem = (id) => {
     dispatch({ type: GET_MENU_ITEM_BEGIN });
     try {
-      const menuItem = originalMenu.filter((item) => item.id === id);
-      dispatch({ type: GET_MENU_ITEM_SUCCESS, payload: menuItem });
+      const menuItem = originalMenu.filter((item) => item.id === id)[0];
+      let menuItemOptions = menuOptions.filter(
+        (option) => option.category === menuItem.category
+      );
+      if (menuItemOptions.length > 0) {
+        menuItemOptions = menuOptions.filter(
+          (option) => option.category === menuItem.category
+        )[0].options;
+      }
+      dispatch({
+        type: GET_MENU_ITEM_SUCCESS,
+        payload: { menuItem, menuItemOptions },
+      });
     } catch (error) {
       dispatch({ type: GET_MENU_ITEM_ERROR });
     }

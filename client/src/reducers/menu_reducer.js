@@ -58,7 +58,8 @@ const menu_reducer = (state, action) => {
     return {
       ...state,
       single_menu_item_loading: false,
-      single_menu_item: action.payload,
+      single_menu_item: action.payload.menuItem,
+      single_menu_item_options: action.payload.menuItemOptions,
     };
   }
   if (action.type === GET_MENU_ITEM_ERROR) {

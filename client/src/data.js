@@ -12,6 +12,67 @@ import React from "react";
 
 /*
 ==============================
+Menu Options
+==============================
+*/
+
+export const menuOptions = [
+  {
+    category: "pizza",
+    options: [
+      {
+        name: "Size",
+        values: ["Small", "Medium", "Large"],
+      },
+      {
+        name: "Toppings",
+        values: [
+          "Extra Cheese",
+          "Onions",
+          "Garlic",
+          "Pepper",
+          "Pepperoni",
+          "Mushrooms",
+        ],
+      },
+    ],
+  },
+  {
+    category: "pasta",
+    options: [
+      {
+        name: "Toppings",
+        values: [
+          "Extra Cheese",
+          "Onions",
+          "Garlic",
+          "Pepper",
+          "Pepperoni",
+          "Mushrooms",
+        ],
+      },
+    ],
+  },
+  {
+    category: "salad",
+    options: [
+      {
+        name: "Toppings",
+        values: [
+          "Extra Cheese",
+          "Onions",
+          "Garlic",
+          "Pepper",
+          "Pepperoni",
+          "Mushrooms",
+        ],
+      },
+    ],
+  },
+];
+
+/*
+==============================
 Menu
 ==============================
 */
