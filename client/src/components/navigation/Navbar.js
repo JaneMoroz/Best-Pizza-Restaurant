@@ -10,7 +10,14 @@ import { useCartContext } from "../../context/cart_context";
 
 const Navbar = () => {
   const { id } = useParams();
-  const { openSidebar, openSubmenu, closeSubmenu } = useMenuContext();
+  const {
+    openSidebar,
+    openSubmenu,
+    closeSubmenu,
+    isSearchOpen,
+    openSearch,
+    closeSearch,
+  } = useMenuContext();
   const { isCartOpen, openCart, closeCart, total_items } = useCartContext();
 
   const displaySubmenu = (e) => {
@@ -27,6 +34,14 @@ const Navbar = () => {
     }
     if (e.target.classList.contains("nav__btns")) {
       closeSubmenu();
+    }
+  };
+
+  const handleSearch = () => {
+    if (isSearchOpen) {
+      closeSearch();
+    } else {
+      openSearch();
     }
   };
 
@@ -85,7 +100,7 @@ const Navbar = () => {
               to={"/"}
               type="button"
               className="btn btn--search"
-              // onClick={() => setSearchMode(!searchMode)}
+              onClick={handleSearch}
             >
               <FaSearch className="icon" />
             </Link>
@@ -93,7 +108,7 @@ const Navbar = () => {
             <button
               type="button"
               className="btn btn--search"
-              // onClick={() => setSearchMode(!searchMode)}
+              onClick={handleSearch}
             >
               <FaSearch className="icon" />
             </button>

@@ -47,7 +47,7 @@ const filter_reducer = (state, action) => {
     // search
     if (text) {
       tempMenu = tempMenu.filter((menuItem) => {
-        return menuItem.name.toLowerCase().includes(text);
+        return menuItem.name.toLowerCase().includes(text.toLowerCase());
       });
     }
     // category filtering

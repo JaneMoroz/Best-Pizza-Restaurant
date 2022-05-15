@@ -15,6 +15,7 @@ import {
   GET_MENU_ITEM_SUCCESS,
   GET_MENU_ITEM_ERROR,
 } from "../actions";
+import { useFilterContext } from "./filter_context";
 
 const initialState = {
   isSidebarOpen: false,

@@ -31,7 +31,7 @@ const initialState = {
 const FilterContext = React.createContext();
 
 export const FilterProvider = ({ children }) => {
-  const { menu } = useMenuContext();
+  const { menu, isSearchOpen } = useMenuContext();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -43,6 +43,14 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: SORT_MENU });
     dispatch({ type: PAGINATE_MENU, payload: state.page });
   }, [menu, state.sort, state.filters, state.page]);
+
+  useEffect(() => {
+    if (!isSearchOpen) {
+      let name = "text";
+      let value = "";
+      dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
+    }
+  }, [isSearchOpen]);
 
   const updateSort = (e) => {
     // const name = e.target.name;
