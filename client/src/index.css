@@ -970,6 +970,23 @@ Loader
 
 /*
 ==============================
+Error
+==============================
+*/
+.error {
+  margin: 3.2rem 0;
+}
+.error h1,
+.error p {
+  text-align: center;
+}
+
+.error p {
+  margin-top: 1.2rem;
+}
+
+/*
+==============================
 Single Product
 ==============================
 */

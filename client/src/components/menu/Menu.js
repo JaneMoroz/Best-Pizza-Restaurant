@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useMenuContext } from "../../context/menu_context";
 import { useFilterContext } from "../../context/filter_context";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { getUniqueValues, paginate } from "../../utils";
 import MenuItem from "./MenuItem";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   const {
@@ -13,16 +13,64 @@ const Menu = () => {
   } = useMenuContext();
   const {
     filtered_menu,
+    paginated_menu,
     filters: { text, category, type },
     updateFilters,
     menu,
+    page,
+    updatePage,
+    max_pages,
   } = useFilterContext();
 
-  const categories = getUniqueValues(menu, "category");
-  const types = getUniqueValues(menu, "type");
+  // Get categories and types corresponding to category
+  let categories = menu
+    .map((menuItem) => menuItem["category"])
+    .filter((menuItem) => menuItem !== undefined);
+  categories = [...new Set(categories), "all"];
+  let types = menu
+    .map((menuItem) => {
+      if (category === "all") {
+        return menuItem["type"];
+      } else {
+        if (menuItem.category === category) {
+          return menuItem["type"];
+        }
+      }
+    })
+    .filter((menuItem) => menuItem !== undefined);
+  types = ["all", ...new Set(types)];
+
+  // Pagination buttons handlers
+  const handlePage = (index) => {
+    updatePage(index);
+  };
+
+  const nextPage = () => {
+    let nextPage = page + 1;
+    if (nextPage > max_pages - 1) {
+      nextPage = 0;
+    }
+    updatePage(nextPage);
+  };
+
+  const prevPage = () => {
+    let prevPage = page - 1;
+    if (prevPage < 0) {
+      prevPage = max_pages - 1;
+    }
+    updatePage(prevPage);
+  };
 
   if (loading) {
     return <div className="loader"></div>;
+  }
+  if (error) {
+    return (
+      <div className="error">
+        <h1>There is an error!</h1>
+        <p>Try again later.</p>
+      </div>
+    );
   }
 
   return (
@@ -64,7 +112,7 @@ const Menu = () => {
                     type="button"
                     onClick={updateFilters}
                   >
-                    {t}
+                    {`${t === "all" ? "all" : `#${t}`}`}
                   </button>
                 </li>
               );
@@ -73,9 +121,31 @@ const Menu = () => {
         </nav>
         {/* end of types */}
         <div className="products">
-          {filtered_menu.map((item) => {
-            return <MenuItem key={item.id} item={item} />;
+          {paginated_menu &&
+            paginated_menu.map((item) => {
+              return <MenuItem key={item.id} item={item} />;
+            })}
+        </div>
+        <div className="pagination">
+          <button className="btn btn--outlined" onClick={prevPage}>
+            <FaArrowLeft />
+          </button>
+          {[...Array(max_pages)].map((x, index) => {
+            return (
+              <button
+                key={index}
+                className={`btn btn--outlined ${
+                  index === page ? "btn--active" : ""
+                }`}
+                onClick={() => handlePage(index)}
+              >
+                {index + 1}
+              </button>
+            );
           })}
+          <button className="btn btn--outlined" onClick={nextPage}>
+            <FaArrowRight />
+          </button>
         </div>
       </div>
     </section>

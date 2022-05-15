@@ -7,14 +7,3 @@ export const paginate = (menuItems) => {
   });
   return newMenuItems;
 };
-
-export const getUniqueValues = (data, type) => {
-  let unique = data.map((item) => {
-    if (item.type) {
-      return item[type];
-    } else {
-      return "all";
-    }
-  });
-  return [...new Set([...unique, "all"])];
-};

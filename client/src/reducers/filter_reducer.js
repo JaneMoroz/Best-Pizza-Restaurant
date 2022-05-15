@@ -7,7 +7,10 @@ import {
   UPDATE_FILTERS,
   FILTER_MENU,
   CLEAR_FILTERS,
+  PAGINATE_MENU,
+  UPDATE_PAGE,
 } from "../actions";
+import { paginate } from "../utils";
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_MENU) {
@@ -15,6 +18,7 @@ const filter_reducer = (state, action) => {
       ...state,
       menu: [...action.payload],
       filtered_menu: [...action.payload],
+      paginated_menu: [...action.payload],
     };
   }
   if (action.type === UPDATE_SORT) {
@@ -27,7 +31,14 @@ const filter_reducer = (state, action) => {
   }
   if (action.type === UPDATE_FILTERS) {
     const { name, value } = action.payload;
-    return { ...state, filters: { ...state.filters, [name]: value } };
+    if (name === "category") {
+      return {
+        ...state,
+        page: 0,
+        filters: { ...state.filters, [name]: value, ["type"]: "all" },
+      };
+    }
+    return { ...state, filters: { ...state.filters, [name]: value }, page: 0 };
   }
   if (action.type === FILTER_MENU) {
     const { menu } = state;
@@ -48,6 +59,14 @@ const filter_reducer = (state, action) => {
       tempMenu = tempMenu.filter((menuItem) => menuItem.type === type);
     }
     return { ...state, filtered_menu: tempMenu };
+  }
+  if (action.type === PAGINATE_MENU) {
+    let maxPages = paginate([...state.filtered_menu]).length;
+    let tempMenu = paginate([...state.filtered_menu])[action.payload];
+    return { ...state, paginated_menu: tempMenu, max_pages: maxPages };
+  }
+  if (action.type === UPDATE_PAGE) {
+    return { ...state, page: action.payload };
   }
   throw new Error(`No Matching "${action.type}" - action type`);
 };

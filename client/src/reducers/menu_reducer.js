@@ -42,7 +42,11 @@ const menu_reducer = (state, action) => {
     return { ...state, menu_loading: true };
   }
   if (action.type === GET_MENU_SUCCESS) {
-    return { ...state, menu_loading: false, menu: action.payload };
+    return {
+      ...state,
+      menu_loading: false,
+      menu: action.payload,
+    };
   }
   if (action.type === GET_MENU_ERROR) {
     return { ...state, menu_loading: false, menu_error: true };

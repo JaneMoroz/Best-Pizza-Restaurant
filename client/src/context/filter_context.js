@@ -9,11 +9,14 @@ import {
   UPDATE_FILTERS,
   FILTER_MENU,
   CLEAR_FILTERS,
+  PAGINATE_MENU,
+  UPDATE_PAGE,
 } from "../actions";
 import { useMenuContext } from "./menu_context";
 
 const initialState = {
   filtered_menu: [],
+  paginated_menu: [],
   menu: [],
   sort: "name-a",
   filters: {
@@ -21,6 +24,8 @@ const initialState = {
     category: "all",
     type: "all",
   },
+  page: 0,
+  max_pages: 0,
 };
 
 const FilterContext = React.createContext();
@@ -36,7 +41,8 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: FILTER_MENU });
     dispatch({ type: SORT_MENU });
-  }, [menu, state.sort, state.filters]);
+    dispatch({ type: PAGINATE_MENU, payload: state.page });
+  }, [menu, state.sort, state.filters, state.page]);
 
   const updateSort = (e) => {
     // const name = e.target.name;
@@ -50,9 +56,16 @@ export const FilterProvider = ({ children }) => {
       value = e.target.textContent;
     }
     if (name === "type") {
-      value = e.target.textContent;
+      if (e.target.textContent.startsWith("#")) {
+        value = e.target.textContent.substring(1);
+      } else {
+        value = e.target.textContent;
+      }
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
+  };
+  const updatePage = (numPage) => {
+    dispatch({ type: UPDATE_PAGE, payload: numPage });
   };
 
   return (
@@ -61,6 +74,7 @@ export const FilterProvider = ({ children }) => {
         ...state,
         updateSort,
         updateFilters,
+        updatePage,
       }}
     >
       {children}
