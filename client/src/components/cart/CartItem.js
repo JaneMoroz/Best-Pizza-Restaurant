@@ -3,7 +3,7 @@ import { useCartContext } from "../../context/cart_context";
 import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
 
 const CartItem = ({ id, name, image, price, amount }) => {
-  const { remove, toggleAmount } = useCartContext();
+  const { removeItem, toggleAmount } = useCartContext();
   return (
     <article className="cart-item">
       <div className="cart-item__img">
@@ -30,7 +30,7 @@ const CartItem = ({ id, name, image, price, amount }) => {
           <FaCaretDown className="icon" />
         </button>
       </div>
-      <button className="btn btn--icon" onClick={() => remove(id)}>
+      <button className="btn btn--icon" onClick={() => removeItem(id)}>
         <FaRegTimesCircle className="icon" />
       </button>
     </article>
