@@ -2,6 +2,7 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cart_context";
+import { formatPrice } from "../../utils";
 
 const MenuItem = ({ item }) => {
   const { id, name, image, price, description } = item;
@@ -18,7 +19,7 @@ const MenuItem = ({ item }) => {
         </p>
       </Link>
       <div>
-        <span>{`$${price}`}</span>
+        <span>{formatPrice(price)}</span>
         <button
           type="button"
           className="btn btn--icon"

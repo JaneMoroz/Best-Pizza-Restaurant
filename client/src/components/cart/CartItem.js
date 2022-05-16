@@ -1,6 +1,7 @@
 import React from "react";
 import { useCartContext } from "../../context/cart_context";
 import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
+import { formatPrice } from "../../utils";
 
 const CartItem = ({ id, name, image, price, amount }) => {
   const { removeItem, toggleAmount } = useCartContext();
@@ -11,7 +12,7 @@ const CartItem = ({ id, name, image, price, amount }) => {
       </div>
       <div className="cart-item__text">
         <h3>{name}</h3>
-        <p>{`$${price}`}</p>
+        <p>{formatPrice(price)}</p>
       </div>
       <div className="cart-item__quantity">
         <button

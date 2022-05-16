@@ -4,6 +4,7 @@ import { menu } from "../data";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import { useMenuContext } from "../context/menu_context";
+import { formatPrice } from "../utils";
 
 const SingleItem = () => {
   const id = useParams().id;
@@ -64,7 +65,7 @@ const SingleItem = () => {
               })}
             </div>
           )}
-          <p className="price">{`$${item.price}`}</p>
+          <p className="price">{formatPrice(item.price)}</p>
           <button
             type="button"
             className="btn btn--outlined"

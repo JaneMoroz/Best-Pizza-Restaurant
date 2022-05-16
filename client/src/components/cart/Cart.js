@@ -2,6 +2,7 @@ import React from "react";
 import { useCartContext } from "../../context/cart_context";
 import { FaTimes } from "react-icons/fa";
 import CartItem from "./CartItem";
+import { formatPrice } from "../../utils";
 
 const Cart = () => {
   const { cart, isCartOpen, total_amount, clearCart, closeCart } =
@@ -23,7 +24,7 @@ const Cart = () => {
       <div className="total">
         <div className="total__text">
           <span>Total:</span>
-          <span>{`$${total_amount}`}</span>
+          <span>{formatPrice(total_amount)}</span>
         </div>
         <a href="#" className="btn btn--secondary">
           Order
