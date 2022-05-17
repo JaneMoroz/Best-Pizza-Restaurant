@@ -5,7 +5,7 @@ import { useCartContext } from "../../context/cart_context";
 import { formatPrice } from "../../utils";
 
 const MenuItem = ({ item }) => {
-  const { id, name, image, price, description } = item;
+  const { id, name, image, price, description, category } = item;
   const { addToCart } = useCartContext();
 
   return (
@@ -23,7 +23,7 @@ const MenuItem = ({ item }) => {
         <button
           type="button"
           className="btn btn--icon"
-          onClick={() => addToCart({ id, name, image, price })}
+          onClick={() => addToCart({ id, name, image, price, category })}
         >
           <FaShoppingCart className="icon" />
         </button>

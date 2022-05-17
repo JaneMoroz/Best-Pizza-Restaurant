@@ -467,6 +467,7 @@ Cart Details
 .cart-item__text {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
 }
 
 .toppings,

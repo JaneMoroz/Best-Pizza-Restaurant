@@ -18,7 +18,7 @@ const Cart = () => {
       <div className="cart-items-container">
         {cart.length !== 0 &&
           cart.map((item) => {
-            return <CartItem key={item.id} {...item} />;
+            return <CartItem key={item.id} item={item} />;
           })}
       </div>
       <div className="total">

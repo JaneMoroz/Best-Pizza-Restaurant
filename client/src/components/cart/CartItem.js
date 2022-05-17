@@ -2,30 +2,28 @@ import React from "react";
 import { useCartContext } from "../../context/cart_context";
 import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
 import { formatPrice } from "../../utils";
+import { Link } from "react-router-dom";
 
-const CartItem = ({
-  id,
-  name,
-  image,
-  price,
-  amount,
-  size,
-  toppings,
-  category,
-}) => {
+const CartItem = ({ item }) => {
   const { removeItem, toggleAmount } = useCartContext();
+  const { menuId, id, name, image, price, amount, size, toppings, category } =
+    item;
   return (
     <article className="cart-item">
-      <div className="cart-item__img">
+      <Link to={`menu/${menuId}`} className="cart-item__img">
         <img src={image} alt={name} />
-      </div>
+      </Link>
       <div className="cart-item__text">
         <h3>{name}</h3>
         <p>{formatPrice(price)}</p>
         {(category === "pizza" || category === "drink") && (
           <p className="size">{size}</p>
         )}
-        <p className="toppings">Add more {toppings.join(", ").toLowerCase()}</p>
+        {toppings.length > 0 && (
+          <p className="toppings">
+            Add more {toppings.join(", ").toLowerCase()}
+          </p>
+        )}
       </div>
       <div className="cart-item__quantity">
         <button

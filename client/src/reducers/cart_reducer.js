@@ -50,6 +50,7 @@ const cart_reducer = (state, action) => {
       return { ...state, cart: tempCart };
     } else {
       const newItem = {
+        menuId: id,
         image,
         name,
         price,
