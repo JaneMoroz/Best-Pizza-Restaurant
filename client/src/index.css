@@ -277,10 +277,6 @@ Navbar
     display: block;
   }
 
-  .links-container {
-    /* height: 0; */
-  }
-
   .links {
     display: none;
   }
@@ -510,6 +506,13 @@ Cart Details
   color: var(--tertiary);
 }
 
+@media only screen and (max-width: 37.5em) {
+  .cart-details {
+    top: 7.5rem;
+    right: 1rem;
+  }
+}
+
 /*
 ==============================
 Sidebar
@@ -616,11 +619,22 @@ Menu
   padding: 0 8rem;
 }
 
+.filters {
+  display: flex;
+  column-gap: 2.6rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .filters ul {
   display: flex;
   column-gap: 4.8rem;
   justify-content: center;
-  padding-right: 9.6rem;
+  flex: 60%;
+}
+
+.filters li {
+  white-space: nowrap;
 }
 
 .filters .btn {
@@ -635,6 +649,11 @@ Menu
 .filters .btn--active,
 .filters .btn:hover {
   color: var(--primary);
+}
+
+.sort-btns {
+  display: flex;
+  column-gap: 1.2rem;
 }
 
 .products {
@@ -706,6 +725,7 @@ Menu
   }
   .filters ul {
     padding-right: 0;
+    column-gap: 2.4rem;
   }
 }
 
@@ -735,6 +755,14 @@ Menu
 
   .menu__products {
     padding: 0;
+  }
+
+  .filters ul {
+    justify-content: stretch;
+    justify-content: space-between;
+    row-gap: 1.2rem;
+    overflow-x: auto;
+    padding: 1.6rem 0;
   }
 }
 
