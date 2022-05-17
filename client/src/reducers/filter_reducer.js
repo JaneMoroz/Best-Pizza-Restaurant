@@ -1,12 +1,9 @@
 import {
   LOAD_MENU,
-  SET_LISTVIEW,
-  SET_GRIDVIEW,
   UPDATE_SORT,
   SORT_MENU,
   UPDATE_FILTERS,
   FILTER_MENU,
-  CLEAR_FILTERS,
   PAGINATE_MENU,
   UPDATE_PAGE,
 } from "../actions";
@@ -53,6 +50,18 @@ const filter_reducer = (state, action) => {
         ...state,
         page: 0,
         filters: { ...state.filters, [name]: value, ["type"]: "all" },
+      };
+    }
+    if (name === "text") {
+      return {
+        ...state,
+        page: 0,
+        filters: {
+          ...state.filters,
+          [name]: value,
+          ["type"]: "all",
+          ["category"]: "all",
+        },
       };
     }
     return { ...state, filters: { ...state.filters, [name]: value }, page: 0 };

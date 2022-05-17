@@ -2,13 +2,10 @@ import React, { useEffect, useContext, useReducer } from "react";
 import reducer from "../reducers/filter_reducer";
 import {
   LOAD_MENU,
-  SET_GRIDVIEW,
-  SET_LISTVIEW,
   UPDATE_SORT,
   SORT_MENU,
   UPDATE_FILTERS,
   FILTER_MENU,
-  CLEAR_FILTERS,
   PAGINATE_MENU,
   UPDATE_PAGE,
 } from "../actions";

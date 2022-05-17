@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "./components/navigation/Navbar";
 import Testimonials from "./components/testimonials/Testimonials";
 import Questions from "./components/question/Questions";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useCartContext } from "../../context/cart_context";
 import { formatPrice } from "../../utils";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // Stripe imports
 import { loadStripe } from "@stripe/stripe-js";
@@ -63,10 +63,10 @@ const CheckoutForm = () => {
       setError(null);
       setProcessing(false);
       setSucceeded(true);
-      clearCart();
       setTimeout(() => {
+        clearCart();
         navigate("/");
-      }, 10000);
+      }, 3000);
     }
   };
 
@@ -105,15 +105,15 @@ const CheckoutForm = () => {
           </div>
         )}
         {/* Show a success message upon completion */}
-        <p className={succeeded ? "result-message" : "result-message hidden"}>
-          Payment succedded, see the result in your{" "}
+        <p className={succeeded ? "result-message" : "result-message hidden "}>
+          Payment succeeded, see the result in your{" "}
           <a
             className="btn btn--text"
             href={`https://dashboard.stripe.com/test/payments`}
           >
             Stripe Dashboard.
-          </a>
-          <p>Refresh the page to pay again</p>
+          </a>{" "}
+          Refresh the page to pay again.
         </p>
       </form>
       <p className="test">Test Card Number: 4242 4242 4242 4242</p>

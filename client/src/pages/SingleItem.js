@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { menu } from "../data";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import { useMenuContext } from "../context/menu_context";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useMenuContext } from "../../context/menu_context";
 import { useFilterContext } from "../../context/filter_context";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -9,7 +9,6 @@ import {
   BsSortNumericDown,
 } from "react-icons/bs";
 import MenuItem from "./MenuItem";
-import { Link } from "react-router-dom";
 
 const Menu = () => {
   const {
@@ -18,9 +17,8 @@ const Menu = () => {
     menu_error: error,
   } = useMenuContext();
   const {
-    filtered_menu,
     paginated_menu,
-    filters: { text, category, type },
+    filters: { category, type },
     updateFilters,
     menu,
     page,

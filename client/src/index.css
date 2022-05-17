@@ -1263,6 +1263,10 @@ Checkout
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
 /* spinner/processing state, errors */
 #payment-form .spinner,
 #payment-form .spinner:before {

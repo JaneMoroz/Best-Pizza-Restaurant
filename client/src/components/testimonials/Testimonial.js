@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaQuoteRight } from "react-icons/fa";
 
 const Testimonial = ({
-  id,
   name,
   image,
   text,
