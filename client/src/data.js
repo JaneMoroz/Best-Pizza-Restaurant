@@ -69,6 +69,19 @@ export const menuOptions = [
       },
     ],
   },
+  {
+    category: "drink",
+    options: [
+      {
+        name: "Size",
+        values: ["Small", "Medium", "Large"],
+      },
+      {
+        name: "Extra Toppings",
+        values: ["Sugar"],
+      },
+    ],
+  },
 ];
 
 /*

@@ -64,6 +64,7 @@ const SingleItem = () => {
       price: finalPrice,
       size,
       toppings,
+      category: item.category,
     });
     setToppings([]);
     setSize("Small");

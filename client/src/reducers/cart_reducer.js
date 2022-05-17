@@ -24,6 +24,7 @@ const cart_reducer = (state, action) => {
       amount = 1,
       size = "Small",
       toppings = [],
+      category,
     } = action.payload;
 
     // Create id
@@ -56,6 +57,7 @@ const cart_reducer = (state, action) => {
         amount: 1,
         size,
         toppings,
+        category,
       };
       return { ...state, cart: [...state.cart, newItem] };
     }

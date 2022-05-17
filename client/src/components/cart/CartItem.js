@@ -3,7 +3,16 @@ import { useCartContext } from "../../context/cart_context";
 import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
 import { formatPrice } from "../../utils";
 
-const CartItem = ({ id, name, image, price, amount, size, toppings }) => {
+const CartItem = ({
+  id,
+  name,
+  image,
+  price,
+  amount,
+  size,
+  toppings,
+  category,
+}) => {
   const { removeItem, toggleAmount } = useCartContext();
   return (
     <article className="cart-item">
@@ -13,7 +22,9 @@ const CartItem = ({ id, name, image, price, amount, size, toppings }) => {
       <div className="cart-item__text">
         <h3>{name}</h3>
         <p>{formatPrice(price)}</p>
-        <p className="size">{size}</p>
+        {(category === "pizza" || category === "drink") && (
+          <p className="size">{size}</p>
+        )}
         <p className="toppings">Add more {toppings.join(", ").toLowerCase()}</p>
       </div>
       <div className="cart-item__quantity">
