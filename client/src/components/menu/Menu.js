@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useMenuContext } from "../../context/menu_context";
 import { useFilterContext } from "../../context/filter_context";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  BsSortAlphaDown,
+  BsSortAlphaUpAlt,
+  BsSortNumericDownAlt,
+  BsSortNumericDown,
+} from "react-icons/bs";
 import MenuItem from "./MenuItem";
 import { Link } from "react-router-dom";
 
@@ -20,6 +26,8 @@ const Menu = () => {
     page,
     updatePage,
     max_pages,
+    sort,
+    updateSort,
   } = useFilterContext();
 
   // Get categories and types corresponding to category
@@ -59,6 +67,25 @@ const Menu = () => {
       prevPage = max_pages - 1;
     }
     updatePage(prevPage);
+  };
+
+  const handleSort = (value) => {
+    let sorting = {};
+    if (value === "sort-alphabetic") {
+      if (sort === "name-a") {
+        sorting = { sort: "name-z" };
+      } else {
+        sorting = { sort: "name-a" };
+      }
+    }
+    if (value === "sort-numeric") {
+      if (sort === "price-lowest") {
+        sorting = { sort: "price-highest" };
+      } else {
+        sorting = { sort: "price-lowest" };
+      }
+    }
+    updateSort(sorting);
   };
 
   if (loading) {
@@ -118,6 +145,28 @@ const Menu = () => {
               );
             })}
           </ul>
+          <div className="sort-btns">
+            <button
+              className="btn btn--icon btn--sort"
+              onClick={() => handleSort("sort-alphabetic")}
+            >
+              {sort === "name-a" ? (
+                <BsSortAlphaUpAlt className="icon" />
+              ) : (
+                <BsSortAlphaDown className="icon" />
+              )}
+            </button>
+            <button
+              className="btn btn--icon btn--sort"
+              onClick={() => handleSort("sort-numeric")}
+            >
+              {sort === "price-lowest" ? (
+                <BsSortNumericDownAlt className="icon" />
+              ) : (
+                <BsSortNumericDown className="icon" />
+              )}
+            </button>
+          </div>
         </nav>
         {/* end of types */}
         <div className="products">

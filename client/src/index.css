@@ -759,8 +759,7 @@ Menu
 
   .filters ul {
     justify-content: stretch;
-    justify-content: space-between;
-    row-gap: 1.2rem;
+    row-gap: 1.8rem;
     overflow-x: auto;
     padding: 1.6rem 0;
   }

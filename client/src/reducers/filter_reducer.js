@@ -22,11 +22,28 @@ const filter_reducer = (state, action) => {
     };
   }
   if (action.type === UPDATE_SORT) {
-    return { ...state, sort: action.payload };
+    const { sort } = action.payload;
+    return { ...state, sort };
   }
   if (action.type === SORT_MENU) {
     const { sort, filtered_menu } = state;
     let tempMenu = [...filtered_menu];
+    if (sort === "price-lowest") {
+      tempMenu = tempMenu.sort((a, b) => a.price - b.price);
+    }
+    if (sort === "price-highest") {
+      tempMenu = tempMenu.sort((a, b) => b.price - a.price);
+    }
+    if (sort === "name-a") {
+      tempMenu = tempMenu.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    }
+    if (sort === "name-z") {
+      tempMenu = tempMenu.sort((a, b) => {
+        return b.name.localeCompare(a.name);
+      });
+    }
     return { ...state, filtered_menu: tempMenu };
   }
   if (action.type === UPDATE_FILTERS) {

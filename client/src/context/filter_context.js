@@ -42,7 +42,7 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: FILTER_MENU });
     dispatch({ type: SORT_MENU });
     dispatch({ type: PAGINATE_MENU, payload: state.page });
-  }, [menu, state.sort, state.filters, state.page]);
+  }, [menu, state.filters, state.sort, state.page]);
 
   useEffect(() => {
     if (!isSearchOpen) {
@@ -52,9 +52,7 @@ export const FilterProvider = ({ children }) => {
     }
   }, [isSearchOpen]);
 
-  const updateSort = (e) => {
-    // const name = e.target.name;
-    const value = e.target.value;
+  const updateSort = (value) => {
     dispatch({ type: UPDATE_SORT, payload: value });
   };
   const updateFilters = (e) => {
