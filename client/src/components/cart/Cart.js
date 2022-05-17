@@ -3,6 +3,7 @@ import { useCartContext } from "../../context/cart_context";
 import { FaTimes } from "react-icons/fa";
 import CartItem from "./CartItem";
 import { formatPrice } from "../../utils";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, isCartOpen, total_amount, clearCart, closeCart } =
@@ -26,9 +27,9 @@ const Cart = () => {
           <span>Total:</span>
           <span>{formatPrice(total_amount)}</span>
         </div>
-        <a href="#" className="btn btn--secondary">
+        <Link to="/checkout" onClick={closeCart} className="btn btn--secondary">
           Order
-        </a>
+        </Link>
         <button type="button" className="btn btn--text" onClick={clearCart}>
           Remove all
         </button>
