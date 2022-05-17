@@ -10,6 +10,7 @@ const SingleItem = () => {
   const id = useParams().id;
   const { addToCart } = useCartContext();
   const {
+    closeSubmenu,
     fetchMenuItem,
     single_menu_item_loading: loading,
     single_menu_item_error: error,
@@ -83,7 +84,7 @@ const SingleItem = () => {
   }
 
   return (
-    <article className="single-product">
+    <article className="single-product" onMouseOver={closeSubmenu}>
       <div className="container-center">
         <img src={item.image} alt={item.name} />
         <div className="single-product__text">
