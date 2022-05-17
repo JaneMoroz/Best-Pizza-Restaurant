@@ -25,9 +25,9 @@ export const menuOptions = [
         values: ["Small", "Medium", "Large"],
       },
       {
-        name: "Toppings",
+        name: "Extra Toppings",
         values: [
-          "Extra Cheese",
+          "Cheese",
           "Onions",
           "Garlic",
           "Pepper",
@@ -41,9 +41,9 @@ export const menuOptions = [
     category: "pasta",
     options: [
       {
-        name: "Toppings",
+        name: "Extra Toppings",
         values: [
-          "Extra Cheese",
+          "Cheese",
           "Onions",
           "Garlic",
           "Pepper",
@@ -57,9 +57,9 @@ export const menuOptions = [
     category: "salad",
     options: [
       {
-        name: "Toppings",
+        name: "Extra Toppings",
         values: [
-          "Extra Cheese",
+          "Cheese",
           "Onions",
           "Garlic",
           "Pepper",

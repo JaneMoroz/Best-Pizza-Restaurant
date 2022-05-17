@@ -17,9 +17,57 @@ const SingleItem = () => {
     single_menu_item_options: options,
   } = useMenuContext();
 
+  const [finalPrice, setFinalPrice] = useState("");
+  const [size, setSize] = useState("Small");
+  const [toppings, setToppings] = useState([]);
+
   useEffect(() => {
     fetchMenuItem(+id);
   }, [id]);
+
+  useEffect(() => {
+    if (item) setFinalPrice(item.price);
+  }, [item]);
+
+  useEffect(() => {
+    var oldPrice = +item.price;
+    var newPrice = "";
+    if (size === "Small") newPrice = oldPrice;
+    if (size === "Medium") newPrice = oldPrice + 300;
+    if (size === "Large") newPrice = oldPrice + 500;
+    if (toppings.length > 0) newPrice += 100 * toppings.length;
+    setFinalPrice(newPrice);
+  }, [size, toppings]);
+
+  const handleOption = (e) => {
+    let name = e.target.name;
+    let value = e.target.textContent;
+    if (name === "Size") {
+      setSize(value);
+    } else {
+      let tempToppings = [...toppings];
+      if (tempToppings.includes(value)) {
+        const index = tempToppings.findIndex((item) => item === value);
+        tempToppings.splice(index, 1);
+      } else {
+        tempToppings.push(value);
+      }
+      setToppings(tempToppings);
+    }
+  };
+
+  const handleAddToCart = (item) => {
+    addToCart({
+      id: item.id,
+      name: item.name,
+      image: item.image,
+      price: finalPrice,
+      size,
+      toppings,
+    });
+    setToppings([]);
+    setSize("Small");
+  };
 
   if (loading) {
     return <div className="loader"></div>;
@@ -52,8 +100,14 @@ const SingleItem = () => {
                       {option.values.map((value, index) => {
                         return (
                           <button
+                            name={option.name}
                             key={index}
-                            className="btn btn--outlined btn--small"
+                            className={`btn btn--outlined btn--small ${
+                              toppings.includes(value) || size === value
+                                ? "btn--active"
+                                : ""
+                            }`}
+                            onClick={(e) => handleOption(e)}
                           >
                             {value}
                           </button>
@@ -65,18 +119,11 @@ const SingleItem = () => {
               })}
             </div>
           )}
-          <p className="price">{formatPrice(item.price)}</p>
+          <p className="price">{formatPrice(finalPrice)}</p>
           <button
             type="button"
             className="btn btn--outlined"
-            onClick={() =>
-              addToCart({
-                id: item.id,
-                name: item.name,
-                image: item.image,
-                price: item.price,
-              })
-            }
+            onClick={() => handleAddToCart(item)}
           >
             Order
           </button>

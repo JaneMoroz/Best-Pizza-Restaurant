@@ -468,6 +468,20 @@ Cart Details
   display: inline-block;
 }
 
+.cart-item__text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.toppings,
+.size {
+  max-width: 16rem;
+  grid-column: 1 / -1;
+  color: var(--tertiary);
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
 .cart-item__text h2 {
   margin-bottom: 0.8rem;
 }
@@ -1043,6 +1057,7 @@ Single Product
 
 .option span {
   padding-bottom: 1.6rem;
+  white-space: nowrap;
 }
 
 .option__btns {
