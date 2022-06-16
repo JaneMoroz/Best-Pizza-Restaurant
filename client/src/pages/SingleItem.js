@@ -76,8 +76,12 @@ const SingleItem = () => {
   if (error) {
     return (
       <div className="error">
-        <h1>There is an error!</h1>
-        <p>Try again later.</p>
+        <p className="status">404!</p>
+        <h1>Page doesn't exist</h1>
+        <img src="/img/best-pizza-error.svg" alt="Error image" />
+        <Link to="/" type="button" className="btn btn--secondary">
+          Home
+        </Link>
       </div>
     );
   }
