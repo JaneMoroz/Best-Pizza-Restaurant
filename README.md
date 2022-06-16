@@ -56,3 +56,7 @@ Builds the app for production.<br />
 ### Checkout Page
 
 <img src="https://i.ibb.co/7Wxs43q/Best-Pizza-payment.jpg" alt="Checkout Page" />
+
+### Error Page
+
+<img src="https://i.ibb.co/vPDb9TD/Best-Pizza-error.jpg" alt="Error Page" />
