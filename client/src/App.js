@@ -10,7 +10,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="menu/:id" element={<SingleItem />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="*" element={<Error />} />
