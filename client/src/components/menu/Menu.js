@@ -89,6 +89,7 @@ const Menu = () => {
   if (loading) {
     return <div className="loader"></div>;
   }
+
   if (error) {
     return (
       <div className="error">
@@ -167,33 +168,43 @@ const Menu = () => {
           </div>
         </nav>
         {/* end of types */}
+        {/* nothing found */}
+        {paginated_menu === undefined && (
+          <div className="error">
+            <h1>Nothing found!</h1>
+            <p>Try to search something else.</p>
+          </div>
+        )}
+        {/* end of nothing found */}
         <div className="products">
           {paginated_menu &&
             paginated_menu.map((item) => {
               return <MenuItem key={item.id} item={item} />;
             })}
         </div>
-        <div className="pagination">
-          <button className="btn btn--outlined" onClick={prevPage}>
-            <FaArrowLeft />
-          </button>
-          {[...Array(max_pages)].map((x, index) => {
-            return (
-              <button
-                key={index}
-                className={`btn btn--outlined ${
-                  index === page ? "btn--active" : ""
-                }`}
-                onClick={() => handlePage(index)}
-              >
-                {index + 1}
-              </button>
-            );
-          })}
-          <button className="btn btn--outlined" onClick={nextPage}>
-            <FaArrowRight />
-          </button>
-        </div>
+        {paginated_menu !== undefined && (
+          <div className="pagination">
+            <button className="btn btn--outlined" onClick={prevPage}>
+              <FaArrowLeft />
+            </button>
+            {[...Array(max_pages)].map((x, index) => {
+              return (
+                <button
+                  key={index}
+                  className={`btn btn--outlined ${
+                    index === page ? "btn--active" : ""
+                  }`}
+                  onClick={() => handlePage(index)}
+                >
+                  {index + 1}
+                </button>
+              );
+            })}
+            <button className="btn btn--outlined" onClick={nextPage}>
+              <FaArrowRight />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
