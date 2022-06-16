@@ -11,11 +11,7 @@ import {
 import MenuItem from "./MenuItem";
 
 const Menu = () => {
-  const {
-    closeSubmenu,
-    menu_loading: loading,
-    menu_error: error,
-  } = useMenuContext();
+  const { menu_loading: loading, menu_error: error } = useMenuContext();
   const {
     paginated_menu,
     filters: { category, type },
@@ -100,7 +96,7 @@ const Menu = () => {
   }
 
   return (
-    <section className="menu" onMouseOver={closeSubmenu}>
+    <section className="menu">
       {/* categories */}
       <nav className="menu__nav">
         <ul>
