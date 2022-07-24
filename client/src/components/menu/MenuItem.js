@@ -3,15 +3,17 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cart_context";
 import { formatPrice } from "../../utils";
+import Image from "../Image";
 
 const MenuItem = ({ item }) => {
-  const { id, name, image, price, description, category } = item;
+  const { id, name, image, webpImg, price, description, category } = item;
   const { addToCart } = useCartContext();
 
   return (
     <article className="product">
       <Link to={`menu/${id}`}>
-        <img src={image} alt={name} />
+        <Image src={webpImg} fallback={image} alt={name} />
+        {/* <img src={image} alt={name} /> */}
         <h1>{name}</h1>
         <p>
           {description.join(", ").substring(0, 60)}

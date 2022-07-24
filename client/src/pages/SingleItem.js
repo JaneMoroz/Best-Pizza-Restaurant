@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import { useMenuContext } from "../context/menu_context";
 import { formatPrice } from "../utils";
+import Image from "../components/Image";
 
 const SingleItem = () => {
   const id = useParams().id;
@@ -88,7 +89,8 @@ const SingleItem = () => {
   return (
     <article className="single-product">
       <div className="container-center">
-        <img src={item.image} alt={item.name} />
+        <Image src={item.webpImg} fallback={item.image} alt={item.name} />
+        {/* <img src={item.image} alt={item.name} /> */}
         <div className="single-product__text">
           <h1>{item.name}</h1>
           <p className="description">

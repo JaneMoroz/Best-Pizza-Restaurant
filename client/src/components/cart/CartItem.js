@@ -3,15 +3,27 @@ import { useCartContext } from "../../context/cart_context";
 import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
 import { formatPrice } from "../../utils";
 import { Link } from "react-router-dom";
+import Image from "../Image";
 
 const CartItem = ({ item }) => {
   const { removeItem, toggleAmount } = useCartContext();
-  const { menuId, id, name, image, price, amount, size, toppings, category } =
-    item;
+  const {
+    menuId,
+    id,
+    name,
+    image,
+    webpImg,
+    price,
+    amount,
+    size,
+    toppings,
+    category,
+  } = item;
   return (
     <article className="cart-item">
       <Link to={`menu/${menuId}`} className="cart-item__img">
-        <img src={image} alt={name} />
+        <Image src={webpImg} fallback={image} alt={name} />
+        {/* <img src={image} alt={name} /> */}
       </Link>
       <div className="cart-item__text">
         <h3>{name}</h3>

@@ -94,6 +94,7 @@ export const menu = [
   {
     name: "Padrino",
     image: "/img/pizza/0.png",
+    webpImg: "/img/pizza/0.webp",
     id: 0,
     price: "1999",
     description: [
@@ -110,6 +111,7 @@ export const menu = [
   {
     name: "Macellato ",
     image: "/img/pizza/1.png",
+    webpImg: "/img/pizza/1.webp",
     id: 1,
     type: "gluten-free",
     price: "2599",
@@ -128,6 +130,7 @@ export const menu = [
   {
     name: "Pepperoni ",
     image: "/img/pizza/2.png",
+    webpImg: "/img/pizza/2.webp",
     id: 2,
     price: "1599",
     description: [
@@ -141,6 +144,7 @@ export const menu = [
   {
     name: "Wild Truffle",
     image: "/img/pizza/3.png",
+    webpImg: "/img/pizza/3.webp",
     id: 3,
     type: "vegan",
     price: "1599",
@@ -150,6 +154,7 @@ export const menu = [
   {
     name: "Ricotta",
     image: "/img/pizza/4.png",
+    webpImg: "/img/pizza/4.webp",
     id: 4,
     type: "vegan",
     price: "1499",
@@ -166,6 +171,7 @@ export const menu = [
   {
     name: "Capricciosa",
     image: "/img/pizza/7.png",
+    webpImg: "/img/pizza/7.webp",
     id: 5,
     type: "gluten-free",
     price: "1649",
@@ -183,6 +189,7 @@ export const menu = [
   {
     name: "Calzone",
     image: "/img/pizza/6.png",
+    webpImg: "/img/pizza/6.webp",
     id: 6,
     price: "1749",
     description: [
@@ -197,6 +204,7 @@ export const menu = [
   {
     name: "Roberto",
     image: "/img/pizza/8.png",
+    webpImg: "/img/pizza/8.webp",
     id: 7,
     type: "vegan",
     price: "1749",
@@ -212,6 +220,7 @@ export const menu = [
   {
     name: "Parma",
     image: "/img/pizza/9.png",
+    webpImg: "/img/pizza/9.webp",
     id: 8,
     price: "2499",
     description: [
@@ -227,6 +236,7 @@ export const menu = [
   {
     name: "Keste",
     image: "/img/pizza/10.png",
+    webpImg: "/img/pizza/10.webp",
     id: 9,
     price: "1749",
     description: [
@@ -242,6 +252,7 @@ export const menu = [
   {
     name: "Margherita",
     image: "/img/pizza/11.png",
+    webpImg: "/img/pizza/11.webp",
     id: 10,
     type: "gluten-free",
     price: "1749",
@@ -258,6 +269,7 @@ export const menu = [
   {
     name: "Ribalta",
     image: "/img/pizza/12.png",
+    webpImg: "/img/pizza/12.webp",
     id: 11,
     type: "gluten-free",
     price: "1849",
@@ -274,6 +286,7 @@ export const menu = [
   {
     name: "Pianeta",
     image: "/img/pizza/13.png",
+    webpImg: "/img/pizza/13.webp",
     id: 12,
     type: "gluten-free",
     price: "1849",
@@ -290,6 +303,7 @@ export const menu = [
   {
     name: "Marinara",
     image: "/img/pizza/14.png",
+    webpImg: "/img/pizza/14.webp",
     id: 13,
     type: "vegan",
     price: "1849",
@@ -305,6 +319,7 @@ export const menu = [
   {
     name: "Assorti",
     image: "/img/pizza/15.png",
+    webpImg: "/img/pizza/15.webp",
     id: 14,
     price: "2449",
     description: [
@@ -320,6 +335,7 @@ export const menu = [
   {
     name: "Norma",
     image: "/img/pizza/16.png",
+    webpImg: "/img/pizza/16.webp",
     id: 15,
     price: "2449",
     description: [
@@ -335,6 +351,7 @@ export const menu = [
   {
     name: "Montanara",
     image: "/img/pizza/17.png",
+    webpImg: "/img/pizza/17.webp",
     id: 16,
     type: "gluten-free",
     price: "1949",
@@ -350,6 +367,7 @@ export const menu = [
   {
     name: "Montanara Light",
     image: "/img/pizza/18.png",
+    webpImg: "/img/pizza/18.webp",
     id: 17,
     type: "vegan",
     price: "1549",
@@ -365,6 +383,7 @@ export const menu = [
   {
     name: "Goirgia",
     image: "/img/pizza/19.png",
+    webpImg: "/img/pizza/19.webp",
     id: 18,
     price: "1949",
     description: [
@@ -379,6 +398,7 @@ export const menu = [
   {
     name: "Gnocchi",
     image: "/img/pasta/0.png",
+    webpImg: "/img/pasta/0.webp",
     type: "gluten-free",
     id: 19,
     price: "1149",
@@ -388,6 +408,7 @@ export const menu = [
   {
     name: "Spaghetti",
     image: "/img/pasta/1.png",
+    webpImg: "/img/pasta/1.webp",
     id: 20,
     price: "1149",
     description: ["Cherry Tomatoes", "Buffalo Mozzarella", "Basil"],
@@ -396,6 +417,7 @@ export const menu = [
   {
     name: "Olives Pasta",
     image: "/img/pasta/2.png",
+    webpImg: "/img/pasta/2.webp",
     type: "gluten-free",
     id: 21,
     price: "1149",
@@ -405,6 +427,7 @@ export const menu = [
   {
     name: "Fornino Pasta",
     image: "/img/pasta/3.png",
+    webpImg: "/img/pasta/3.webp",
     id: 22,
     price: "1549",
     description: ["Pepperoni", "Buffalo Mozzarella", "Basil"],
@@ -413,6 +436,7 @@ export const menu = [
   {
     name: "Mixed Salat",
     image: "/img/salad/0.png",
+    webpImg: "/img/salad/0.webp",
     id: 23,
     type: "gluten-free",
     price: "649",
@@ -422,6 +446,7 @@ export const menu = [
   {
     name: "Cousous Salad",
     image: "/img/salad/1.png",
+    webpImg: "/img/salad/1.webp",
     id: 24,
     type: "vegan",
     price: "599",
@@ -431,6 +456,7 @@ export const menu = [
   {
     name: "Caesar Salad",
     image: "/img/salad/2.png",
+    webpImg: "/img/salad/2.webp",
     type: "gluten-free",
     id: 25,
     price: "599",
@@ -440,6 +466,7 @@ export const menu = [
   {
     name: "Chicken Salad",
     image: "/img/salad/3.png",
+    webpImg: "/img/salad/3.webp",
     id: 26,
     price: "499",
     description: [
@@ -454,6 +481,7 @@ export const menu = [
   {
     name: "Insalata mista",
     image: "/img/salad/4.png",
+    webpImg: "/img/salad/4.webp",
     id: 27,
     price: "699",
     description: ["Chicken", "Chared pineapple", "Cheddar", "Jalapeno"],
@@ -462,6 +490,7 @@ export const menu = [
   {
     name: "Caprese Salad",
     image: "/img/salad/5.png",
+    webpImg: "/img/salad/5.webp",
     type: "vegan",
     id: 28,
     price: "650",
@@ -471,6 +500,7 @@ export const menu = [
   {
     name: "Seafood Salad",
     image: "/img/salad/7.png",
+    webpImg: "/img/salad/7.webp",
     id: 29,
     price: "599",
     description: ["Feta", "Pizza sauce", "Cucumber", "Cheddar", "Salad"],
@@ -479,6 +509,7 @@ export const menu = [
   {
     name: "Jalapeno Salad",
     image: "/img/salad/8.png",
+    webpImg: "/img/salad/8.webp",
     type: "gluten-free",
     id: 30,
     price: "799",
@@ -488,6 +519,7 @@ export const menu = [
   {
     name: "Fruit Salad",
     image: "/img/salad/9.png",
+    webpImg: "/img/salad/9.webp",
     type: "gluten-free",
     id: 31,
     price: "499",
@@ -497,6 +529,7 @@ export const menu = [
   {
     name: "Avocado Salad",
     image: "/img/salad/10.png",
+    webpImg: "/img/salad/10.webp",
     type: "vegan",
     id: 32,
     price: "499",
@@ -506,6 +539,7 @@ export const menu = [
   {
     name: "Caffè Americano",
     image: "/img/drinks/0.png",
+    webpImg: "/img/drinks/0.webp",
     type: "coffee",
     id: 33,
     price: "350",
@@ -515,6 +549,7 @@ export const menu = [
   {
     name: "Cappuccino",
     image: "/img/drinks/1.png",
+    webpImg: "/img/drinks/1.webp",
     type: "coffee",
     id: 34,
     price: "250",
@@ -524,6 +559,7 @@ export const menu = [
   {
     name: "Espresso",
     image: "/img/drinks/2.png",
+    webpImg: "/img/drinks/2.webp",
     type: "coffee",
     id: 35,
     price: "450",
@@ -533,6 +569,7 @@ export const menu = [
   {
     name: "Caffè Latte",
     image: "/img/drinks/3.png",
+    webpImg: "/img/drinks/3.webp",
     type: "coffee",
     id: 36,
     price: "450",
@@ -542,6 +579,7 @@ export const menu = [
   {
     name: "Cosmopolitan",
     image: "/img/drinks/4.png",
+    webpImg: "/img/drinks/4.webp",
     type: "cocktail",
     id: 37,
     price: "1599",
@@ -551,6 +589,7 @@ export const menu = [
   {
     name: "Negroni",
     image: "/img/drinks/5.png",
+    webpImg: "/img/drinks/5.webp",
     type: "cocktail",
     id: 38,
     price: "1699",
@@ -560,6 +599,7 @@ export const menu = [
   {
     name: "Spritz",
     image: "/img/drinks/7.png",
+    webpImg: "/img/drinks/7.webp",
     type: "cocktail",
     id: 39,
     price: "2599",
@@ -569,6 +609,7 @@ export const menu = [
   {
     name: "Pimm's Cup",
     image: "/img/drinks/8.png",
+    webpImg: "/img/drinks/8.webp",
     type: "cocktail",
     id: 40,
     price: "1799",
@@ -585,6 +626,7 @@ export const menu = [
   {
     name: "Homemade Drink",
     image: "/img/drinks/9.png",
+    webpImg: "/img/drinks/9.webp",
     type: "cocktail",
     id: 41,
     price: "1499",
@@ -594,6 +636,7 @@ export const menu = [
   {
     name: "Paloma",
     image: "/img/drinks/10.png",
+    webpImg: "/img/drinks/10.webp",
     type: "cocktail",
     id: 42,
     price: "1799",
@@ -603,6 +646,7 @@ export const menu = [
   {
     name: "Dark & Stormy",
     image: "/img/drinks/11.png",
+    webpImg: "/img/drinks/11.webp",
     type: "cocktail",
     id: 43,
     price: "2199",
@@ -612,10 +656,31 @@ export const menu = [
   {
     name: "Mint Julep",
     image: "/img/drinks/12.png",
+    webpImg: "/img/drinks/12.webp",
     type: "cocktail",
     id: 44,
     price: "1999",
     description: ["Bourbon", "Mint leaves"],
+    category: "drink",
+  },
+  {
+    name: "Iced Tea",
+    image: "/img/drinks/6.png",
+    webpImg: "/img/drinks/6.webp",
+    type: "tea",
+    id: 45,
+    price: "1199",
+    description: ["Tea", "Mint", "Syrup"],
+    category: "drink",
+  },
+  {
+    name: "Lemon Iced Tea ",
+    image: "/img/drinks/13.png",
+    webpImg: "/img/drinks/13.webp",
+    type: "tea",
+    id: 46,
+    price: "1199",
+    description: ["Tea", "Lemon Juice", "Syrup", "Lemon"],
     category: "drink",
   },
 ];
@@ -673,7 +738,7 @@ export const sublinks = [
     page: "locations",
     links: [
       { label: "New York", url: "/cities" },
-      { label: "Dalla", url: "/cities" },
+      { label: "Dallas", url: "/cities" },
       { label: "Washington", url: "/cities" },
       { label: "New Orlean", url: "/cities" },
       { label: "Austin", url: "/cities" },
