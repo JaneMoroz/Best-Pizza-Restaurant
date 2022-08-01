@@ -15,7 +15,12 @@ const Cart = () => {
     >
       <header className="header">
         <h1>Your Cart</h1>
-        <button className="btn btn--icon" onClick={closeCart}>
+        <button
+          type="button"
+          className="btn btn--icon"
+          onClick={closeCart}
+          aria-label="close"
+        >
           <FaTimes className="icon" />
         </button>
       </header>
@@ -25,7 +30,7 @@ const Cart = () => {
             return <CartItem key={item.id} item={item} />;
           })}
       </div>
-      <div className="total">
+      <footer className="total">
         <div className="total__text">
           <span>Total:</span>
           <span>{formatPrice(total_amount)}</span>
@@ -33,10 +38,15 @@ const Cart = () => {
         <Link to="/checkout" onClick={closeCart} className="btn btn--secondary">
           Order
         </Link>
-        <button type="button" className="btn btn--text" onClick={clearCart}>
+        <button
+          aria-label="remove all items"
+          type="button"
+          className="btn btn--text"
+          onClick={clearCart}
+        >
           Remove all
         </button>
-      </div>
+      </footer>
     </aside>
   );
 };

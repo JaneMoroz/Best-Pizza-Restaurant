@@ -106,6 +106,7 @@ const SingleItem = () => {
                       {option.values.map((value, index) => {
                         return (
                           <button
+                            type="button"
                             name={option.name}
                             key={index}
                             className={`btn btn--outlined btn--small ${

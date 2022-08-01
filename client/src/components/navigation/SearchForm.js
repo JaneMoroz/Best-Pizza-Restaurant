@@ -37,7 +37,11 @@ const SearchForm = () => {
           data-testid="search-input"
         />
       </div>
-      <button className="btn btn--icon btn--form" onClick={closeSearch}>
+      <button
+        className="btn btn--icon btn--form"
+        onClick={closeSearch}
+        aria-label="close"
+      >
         <FaTimes className="icon" />
       </button>
     </form>

@@ -42,6 +42,7 @@ const CartItem = ({ item }) => {
           className="btn btn--small"
           type="button"
           onClick={() => toggleAmount(id, "inc")}
+          aria-label="increase quantity"
         >
           <FaCaretUp className="icon" />
         </button>
@@ -50,11 +51,17 @@ const CartItem = ({ item }) => {
           className="btn btn--small"
           type="button"
           onClick={() => toggleAmount(id, "dec")}
+          aria-label="decrease quantity"
         >
           <FaCaretDown className="icon" />
         </button>
       </div>
-      <button className="btn btn--icon" onClick={() => removeItem(id)}>
+      <button
+        type="button"
+        className="btn btn--icon"
+        onClick={() => removeItem(id)}
+        aria-label="delete from cart"
+      >
         <FaRegTimesCircle className="icon" />
       </button>
     </article>

@@ -142,8 +142,10 @@ const Menu = () => {
           </ul>
           <div className="sort-btns">
             <button
+              type="button"
               className="btn btn--icon btn--sort"
               onClick={() => handleSort("sort-alphabetic")}
+              aria-label="sort alphabetically"
             >
               {sort === "name-a" ? (
                 <BsSortAlphaUpAlt className="icon" />
@@ -152,8 +154,10 @@ const Menu = () => {
               )}
             </button>
             <button
+              type="button"
               className="btn btn--icon btn--sort"
               onClick={() => handleSort("sort-numeric")}
+              aria-label="sort by price"
             >
               {sort === "price-lowest" ? (
                 <BsSortNumericDownAlt className="icon" />
@@ -180,12 +184,18 @@ const Menu = () => {
         </div>
         {paginated_menu !== undefined && (
           <div className="pagination">
-            <button className="btn btn--outlined" onClick={prevPage}>
+            <button
+              type="button"
+              className="btn btn--outlined"
+              onClick={prevPage}
+              aria-label="previous page"
+            >
               <FaArrowLeft />
             </button>
             {[...Array(max_pages)].map((x, index) => {
               return (
                 <button
+                  type="button"
                   key={index}
                   className={`btn btn--outlined ${
                     index === page ? "btn--active" : ""
@@ -196,7 +206,12 @@ const Menu = () => {
                 </button>
               );
             })}
-            <button className="btn btn--outlined" onClick={nextPage}>
+            <button
+              type="button"
+              className="btn btn--outlined"
+              onClick={nextPage}
+              aria-label="next page"
+            >
               <FaArrowRight />
             </button>
           </div>

@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="nav__links" onMouseOver={handleSubmenu}>
           <ul className="links">
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <button
@@ -105,6 +105,7 @@ const Navbar = () => {
               type="button"
               className="btn btn--search"
               onClick={handleSearch}
+              aria-label="search"
             >
               <FaSearch className="icon" />
             </Link>
@@ -114,6 +115,7 @@ const Navbar = () => {
               className="btn btn--search"
               onClick={handleSearch}
               data-testid="search-btn"
+              aria-label="search"
             >
               <FaSearch className="icon" />
             </button>
@@ -124,6 +126,7 @@ const Navbar = () => {
             className="btn btn--cart"
             onClick={isCartOpen ? closeCart : openCart}
             data-testid="cart-btn"
+            aria-label="shopping cart"
           >
             <FaShoppingCart className="icon" />
             <span className="cart__quantity">{total_items}</span>
@@ -132,6 +135,7 @@ const Navbar = () => {
             type="button"
             className="btn btn--toggle"
             onClick={openSidebar}
+            aria-label="navigation menu"
           >
             <FaBars className="icon" />
           </button>

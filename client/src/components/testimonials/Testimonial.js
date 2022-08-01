@@ -26,14 +26,14 @@ const Testimonial = ({
   }
 
   return (
-    <article className={`testimonial ${position}`}>
+    <figure className={`testimonial ${position}`}>
       <FaQuoteRight className="icon" />
       <div className="testimonial__img">
         <img src={image} alt={name} />
         <div className="img-overlay"></div>
       </div>
-      <div className="testimonial__text">
-        <h3>{name}</h3>
+      <blockquote className="testimonial__text">
+        <figcaption>{name}</figcaption>
         <p>
           {readMore ? `${text} ` : `${text.substring(0, 70)}... `}
           <button
@@ -45,8 +45,8 @@ const Testimonial = ({
           </button>
         </p>
         <p className="testimonial__products">{order.join(" ,")}</p>
-      </div>
-    </article>
+      </blockquote>
+    </figure>
   );
 };
 

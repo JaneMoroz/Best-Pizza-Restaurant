@@ -87,7 +87,8 @@ h2 {
   letter-spacing: 0.15rem;
 }
 
-h3 {
+h3,
+figcaption {
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.6;

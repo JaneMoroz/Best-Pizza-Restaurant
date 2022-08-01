@@ -45,6 +45,7 @@ function Testimonials() {
           type="button"
           className="btn btn--icon left"
           onClick={prevSlide}
+          aria-label="previous"
         >
           <FaArrowCircleLeft className="icon" />
         </button>
@@ -52,6 +53,7 @@ function Testimonials() {
           type="button"
           className="btn btn--icon right"
           onClick={nextSlide}
+          aria-label="next"
         >
           <FaArrowCircleRight className="icon" />
         </button>

@@ -26,6 +26,7 @@ const MenuItem = ({ item }) => {
           type="button"
           className="btn btn--icon"
           onClick={() => addToCart({ id, name, image, price, category })}
+          aria-label="add to cart"
         >
           <FaShoppingCart className="icon" />
         </button>
