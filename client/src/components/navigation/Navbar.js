@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart, FaBars, FaSearch } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaSearch } from "../../icons";
 import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";
 import Cart from "../cart/Cart";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useCartContext } from "../../context/cart_context";
-import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "react-icons/fa";
+import { FaCaretUp, FaCaretDown, FaRegTimesCircle } from "../../icons";
 import { formatPrice } from "../../utils";
 import { Link } from "react-router-dom";
 import Image from "../Image";

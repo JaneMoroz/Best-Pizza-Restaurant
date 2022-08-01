@@ -1,6 +1,6 @@
 import React from "react";
 import { useCartContext } from "../../context/cart_context";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes } from "../../icons";
 import CartItem from "./CartItem";
 import { formatPrice } from "../../utils";
 import { Link } from "react-router-dom";

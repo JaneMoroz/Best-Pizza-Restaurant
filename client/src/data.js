@@ -7,7 +7,7 @@ import {
   FaBeer,
   FaWineGlassAlt,
   FaCocktail,
-} from "react-icons/fa";
+} from "./icons";
 import React from "react";
 
 /*

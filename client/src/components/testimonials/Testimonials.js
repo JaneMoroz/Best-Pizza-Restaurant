@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { testimonials } from "../../data";
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "../../icons";
 import Testimonial from "./Testimonial";
 
 function Testimonials() {

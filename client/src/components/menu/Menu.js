@@ -1,13 +1,14 @@
 import React from "react";
 import { useMenuContext } from "../../context/menu_context";
 import { useFilterContext } from "../../context/filter_context";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import {
-  BsSortAlphaDown,
-  BsSortAlphaUpAlt,
-  BsSortNumericDownAlt,
-  BsSortNumericDown,
-} from "react-icons/bs";
+  FaArrowLeft,
+  FaArrowRight,
+  FaSortAlphaDownAlt,
+  FaSortAlphaDown,
+  FaSortNumericDownAlt,
+  FaSortNumericDown,
+} from "../../icons";
 import MenuItem from "./MenuItem";
 
 const Menu = () => {
@@ -148,9 +149,9 @@ const Menu = () => {
               aria-label="sort alphabetically"
             >
               {sort === "name-a" ? (
-                <BsSortAlphaUpAlt className="icon" />
+                <FaSortAlphaDownAlt className="icon" />
               ) : (
-                <BsSortAlphaDown className="icon" />
+                <FaSortAlphaDown className="icon" />
               )}
             </button>
             <button
@@ -160,9 +161,9 @@ const Menu = () => {
               aria-label="sort by price"
             >
               {sort === "price-lowest" ? (
-                <BsSortNumericDownAlt className="icon" />
+                <FaSortNumericDown className="icon" />
               ) : (
-                <BsSortNumericDown className="icon" />
+                <FaSortNumericDownAlt className="icon" />
               )}
             </button>
           </div>

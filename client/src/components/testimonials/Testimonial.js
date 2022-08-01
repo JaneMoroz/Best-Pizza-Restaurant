@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaQuoteRight } from "react-icons/fa";
+import { FaQuoteRight } from "../../icons";
 
 const Testimonial = ({
   name,
