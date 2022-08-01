@@ -9,7 +9,10 @@ const Cart = () => {
   const { cart, isCartOpen, total_amount, clearCart, closeCart } =
     useCartContext();
   return (
-    <aside className={`cart-details ${isCartOpen ? "show" : ""}`}>
+    <aside
+      data-testid="cart"
+      className={`cart-details ${isCartOpen ? "show" : ""}`}
+    >
       <header className="header">
         <h1>Your Cart</h1>
         <button className="btn btn--icon" onClick={closeCart}>

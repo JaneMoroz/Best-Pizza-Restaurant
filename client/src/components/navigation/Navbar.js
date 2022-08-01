@@ -61,6 +61,7 @@ const Navbar = () => {
                 className="link-btn btn"
                 type="button"
                 onMouseOver={displaySubmenu}
+                data-testid="nav-link-1"
               >
                 Menu
               </button>
@@ -70,6 +71,7 @@ const Navbar = () => {
                 className="link-btn btn"
                 type="button"
                 onMouseOver={displaySubmenu}
+                data-testid="nav-link-2"
               >
                 Locations
               </button>
@@ -79,6 +81,7 @@ const Navbar = () => {
                 className="link-btn btn"
                 type="button"
                 onMouseOver={displaySubmenu}
+                data-testid="nav-link-3"
               >
                 About
               </button>
@@ -88,6 +91,7 @@ const Navbar = () => {
                 className="link-btn btn"
                 type="button"
                 onMouseOver={displaySubmenu}
+                data-testid="nav-link-4"
               >
                 Franchising
               </button>
@@ -109,6 +113,7 @@ const Navbar = () => {
               type="button"
               className="btn btn--search"
               onClick={handleSearch}
+              data-testid="search-btn"
             >
               <FaSearch className="icon" />
             </button>
@@ -118,6 +123,7 @@ const Navbar = () => {
             type="button"
             className="btn btn--cart"
             onClick={isCartOpen ? closeCart : openCart}
+            data-testid="cart-btn"
           >
             <FaShoppingCart className="icon" />
             <span className="cart__quantity">{total_items}</span>

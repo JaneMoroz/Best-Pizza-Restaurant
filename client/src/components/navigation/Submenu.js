@@ -31,7 +31,11 @@ const Submenu = () => {
   }, [submenuLocation, links]);
 
   return (
-    <aside className={`submenu ${isSubmenuOpen ? "show" : ""}`} ref={container}>
+    <aside
+      data-testid="submenu"
+      className={`submenu ${isSubmenuOpen ? "show" : ""}`}
+      ref={container}
+    >
       <div className="submenu__el">
         <nav className={`submenu__list ${columns}`}>
           {links.map((link, index) => {

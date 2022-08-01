@@ -22,6 +22,7 @@ const SearchForm = () => {
 
   return (
     <form
+      data-testid="search-from"
       className={`search-form ${isSearchOpen ? "show" : ""}`}
       onSubmit={handleSubmit}
     >
@@ -33,6 +34,7 @@ const SearchForm = () => {
           ref={searchValue}
           onChange={updateFilters}
           value={text}
+          data-testid="search-input"
         />
       </div>
       <button className="btn btn--icon btn--form" onClick={closeSearch}>
