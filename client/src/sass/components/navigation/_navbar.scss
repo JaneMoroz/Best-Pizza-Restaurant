@@ -9,13 +9,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6rem 4.8rem;
+  padding: 1.6rem 3.6rem;
 
   &__btns {
     position: relative;
     display: flex;
+    column-gap: 1.6rem;
+
+    @media only screen and (max-width: 56.25em) {
+      column-gap: 2.4rem;
+    }
 
     @media only screen and (max-width: 37.5em) {
+      column-gap: 1.6rem;
       margin-right: 0;
     }
   }
@@ -25,10 +31,6 @@
 
     @media only screen and (max-width: 75em) {
       padding: 1.6rem 3.2rem;
-
-      a {
-        letter-spacing: 0.15rem;
-      }
     }
 
     @media screen and (max-width: 56.25em) {
@@ -44,6 +46,13 @@
       display: block;
       padding: 1.2rem 1.6rem;
       transition: var(--transition);
+    }
+
+    a {
+      @media only screen and (max-width: 75em) {
+        padding: 1.2rem 1rem;
+        letter-spacing: 0.15rem;
+      }
     }
 
     // TODO: weird class => need to remove?

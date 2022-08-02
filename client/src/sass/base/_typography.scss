@@ -1,0 +1,36 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+a {
+  font-family: "Lato", sans-serif;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+}
+
+h2 {
+  font-size: 18;
+  text-transform: uppercase;
+  color: var(--secondary);
+  text-decoration: underline;
+  letter-spacing: 0.15rem;
+}
+
+h3,
+figcaption {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+p {
+  line-height: 1.4;
+}
