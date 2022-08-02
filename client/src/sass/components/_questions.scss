@@ -1,0 +1,27 @@
+.question {
+  border: 1px solid var(--secondary);
+  border-radius: 2rem;
+  padding: 1.6rem 3.2rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.4rem;
+    column-gap: 1rem;
+  }
+
+  p {
+    transition: var(--transition);
+  }
+}
+
+.qa {
+  @media only screen and (max-width: 56.25em) {
+    max-width: 50rem;
+  }
+}

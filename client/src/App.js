@@ -8,6 +8,7 @@ import SharedLayout from "./components/SharedLayout";
 import { MenuProvider } from "./context/menu_context";
 import { FilterProvider } from "./context/filter_context";
 import { CartProvider } from "./context/cart_context";
+import "./sass/main.scss";
 
 function App() {
   return (

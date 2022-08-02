@@ -51,53 +51,51 @@ const Navbar = () => {
         <Link to={"/"} className="logo">
           Best Pizza
         </Link>
-        <div className="nav__links" onMouseOver={handleSubmenu}>
-          <ul className="links">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <button
-                className="link-btn btn"
-                type="button"
-                onMouseOver={displaySubmenu}
-                data-testid="nav-link-1"
-              >
-                Menu
-              </button>
-            </li>
-            <li>
-              <button
-                className="link-btn btn"
-                type="button"
-                onMouseOver={displaySubmenu}
-                data-testid="nav-link-2"
-              >
-                Locations
-              </button>
-            </li>
-            <li>
-              <button
-                className="link-btn btn"
-                type="button"
-                onMouseOver={displaySubmenu}
-                data-testid="nav-link-3"
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                className="link-btn btn"
-                type="button"
-                onMouseOver={displaySubmenu}
-                data-testid="nav-link-4"
-              >
-                Franchising
-              </button>
-            </li>
-          </ul>
-        </div>
+        <ul className="nav__links" onMouseOver={handleSubmenu}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <button
+              className="link-btn btn"
+              type="button"
+              onMouseOver={displaySubmenu}
+              data-testid="nav-link-1"
+            >
+              Menu
+            </button>
+          </li>
+          <li>
+            <button
+              className="link-btn btn"
+              type="button"
+              onMouseOver={displaySubmenu}
+              data-testid="nav-link-2"
+            >
+              Locations
+            </button>
+          </li>
+          <li>
+            <button
+              className="link-btn btn"
+              type="button"
+              onMouseOver={displaySubmenu}
+              data-testid="nav-link-3"
+            >
+              About
+            </button>
+          </li>
+          <li>
+            <button
+              className="link-btn btn"
+              type="button"
+              onMouseOver={displaySubmenu}
+              data-testid="nav-link-4"
+            >
+              Franchising
+            </button>
+          </li>
+        </ul>
         <div className="nav__btns" onMouseOver={handleSubmenu}>
           {id ? (
             <Link

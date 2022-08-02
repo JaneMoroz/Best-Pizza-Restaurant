@@ -1,0 +1,57 @@
+// TODO: consider renaming
+// Products container
+.menu__products {
+  padding: 0 8rem;
+
+  @media only screen and (max-width: 75em) {
+    padding: 0 2.4rem;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    padding: 0;
+  }
+}
+
+// Menu products
+.products {
+  padding-top: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 3.2rem;
+
+  @media only screen and (max-width: 56.25em) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+// Product
+.product {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  align-items: center;
+
+  img {
+    height: 17rem;
+    width: 17rem;
+    object-fit: cover;
+  }
+
+  p {
+    text-align: center;
+    min-height: 6.2rem;
+  }
+
+  div {
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

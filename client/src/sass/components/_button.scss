@@ -1,0 +1,113 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    font-family: "Lato", sans-serif;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active {
+    filter: contrast(150%);
+  }
+
+  &--secondary,
+  &--secondary:link,
+  &--secondary:visited {
+    padding: 0.8rem 1.8rem;
+    background-color: var(--secondary);
+    color: var(--white);
+    border-radius: 1rem;
+  }
+
+  &--outlined {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 1rem;
+  }
+
+  &--outlined.btn--active {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+
+  &--text {
+    color: var(--secondary);
+    font-size: 1.6rem;
+  }
+
+  &--icon .icon {
+    font-size: 2.2rem;
+    color: var(--secondary);
+    background-color: var(--white);
+  }
+
+  &--small .icon {
+    font-size: 2.4rem;
+    color: var(--secondary);
+  }
+
+  &--qa {
+    font-size: 2rem;
+    color: var(--primary);
+  }
+
+  &--cart {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    margin-right: 3.2rem;
+  }
+
+  &--cart > .icon {
+    font-size: 2.4rem;
+    color: var(--secondary);
+  }
+
+  &--search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 2.4rem;
+  }
+
+  &--search > .icon {
+    font-size: 2.4rem;
+    color: var(--secondary);
+  }
+
+  &--cart > span {
+    font-size: 1.4rem;
+    height: 2.2rem;
+    width: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondary);
+    color: var(--primary);
+    border-radius: 50%;
+  }
+
+  &--toggle > .icon {
+    display: none;
+    font-size: 2.8rem;
+    color: var(--secondary);
+
+    @media screen and (max-width: 56.25em) {
+      display: block;
+    }
+  }
+
+  &--close {
+    font-size: 3rem;
+    color: var(--secondary);
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+  }
+}
