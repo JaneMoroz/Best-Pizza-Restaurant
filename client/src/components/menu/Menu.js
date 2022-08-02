@@ -8,7 +8,7 @@ import {
   FaSortAlphaDown,
   FaSortNumericDownAlt,
   FaSortNumericDown,
-} from "../../icons";
+} from "../../utils/icons";
 import MenuItem from "./MenuItem";
 
 const Menu = () => {

@@ -1,8 +1,8 @@
 import React from "react";
-import { FaShoppingCart } from "../../icons";
+import { FaShoppingCart } from "../../utils/icons";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cart_context";
-import { formatPrice } from "../../utils";
+import { formatPrice } from "../../utils/helpers";
 import Image from "../Image";
 
 const MenuItem = ({ item }) => {

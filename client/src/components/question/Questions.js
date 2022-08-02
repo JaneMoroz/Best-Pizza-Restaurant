@@ -1,5 +1,5 @@
 import React from "react";
-import { questions } from "../../data";
+import { questions } from "../../assets/data/data";
 import Question from "./Question";
 
 function Questions() {

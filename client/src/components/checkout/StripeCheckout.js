@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useCartContext } from "../../context/cart_context";
-import { formatPrice } from "../../utils";
+import { formatPrice } from "../../utils/helpers";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // Stripe imports

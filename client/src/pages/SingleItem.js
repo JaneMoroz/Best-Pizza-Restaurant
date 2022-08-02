@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import { useMenuContext } from "../context/menu_context";
-import { formatPrice } from "../utils";
+import { formatPrice } from "../utils/helpers";
 import Image from "../components/Image";
 
 const SingleItem = () => {
@@ -78,7 +78,7 @@ const SingleItem = () => {
       <div className="error">
         <p className="status">404!</p>
         <h1>Page doesn't exist</h1>
-        <img src="/img/best-pizza-error.svg" alt="Error image" />
+        <img src="/img/best-pizza-error.svg" alt="Error" />
         <Link to="/" type="button" className="btn btn--secondary">
           Home
         </Link>

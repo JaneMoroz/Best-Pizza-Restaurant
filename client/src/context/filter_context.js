@@ -8,7 +8,7 @@ import {
   FILTER_MENU,
   PAGINATE_MENU,
   UPDATE_PAGE,
-} from "../actions";
+} from "../utils/actions";
 import { useMenuContext } from "./menu_context";
 
 const initialState = {

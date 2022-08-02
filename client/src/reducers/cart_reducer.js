@@ -6,7 +6,7 @@ import {
   OPEN_CART,
   REMOVE_CART_ITEM,
   TOGGLE_CART_ITEM_AMOUNT,
-} from "../actions";
+} from "../utils/actions";
 
 const cart_reducer = (state, action) => {
   if (action.type === OPEN_CART) {

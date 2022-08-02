@@ -1,8 +1,8 @@
 import React from "react";
 import { useCartContext } from "../../context/cart_context";
-import { FaTimes } from "../../icons";
+import { FaTimes } from "../../utils/icons";
 import CartItem from "./CartItem";
-import { formatPrice } from "../../utils";
+import { formatPrice } from "../../utils/helpers";
 import { Link } from "react-router-dom";
 
 const Cart = () => {

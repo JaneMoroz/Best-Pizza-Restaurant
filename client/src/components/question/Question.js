@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPlus, FaMinus } from "../../icons";
+import { FaPlus, FaMinus } from "../../utils/icons";
 
 const Question = ({ question }) => {
   const [showInfo, setShowInfo] = useState(false);

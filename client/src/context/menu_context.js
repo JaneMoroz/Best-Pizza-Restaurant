@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/menu_reducer";
-import { menu as originalMenu, sublinks, menuOptions } from "../data";
+import {
+  menu as originalMenu,
+  sublinks,
+  menuOptions,
+} from "../assets/data/data";
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -14,7 +18,7 @@ import {
   GET_MENU_ITEM_BEGIN,
   GET_MENU_ITEM_SUCCESS,
   GET_MENU_ITEM_ERROR,
-} from "../actions";
+} from "../utils/actions";
 
 const initialState = {
   isSidebarOpen: false,

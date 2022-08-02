@@ -8,7 +8,7 @@ import {
   TOGGLE_CART_ITEM_AMOUNT,
   CLEAR_CART,
   COUNT_CART_TOTALS,
-} from "../actions";
+} from "../utils/actions";
 
 const getLocalStorage = () => {
   let cart = localStorage.getItem("pizza-cart");

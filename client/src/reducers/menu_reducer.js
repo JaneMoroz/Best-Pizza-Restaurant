@@ -11,7 +11,7 @@ import {
   GET_MENU_ITEM_BEGIN,
   GET_MENU_ITEM_SUCCESS,
   GET_MENU_ITEM_ERROR,
-} from "../actions";
+} from "../utils/actions";
 
 const menu_reducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {

@@ -7,7 +7,7 @@ import {
   FaBeer,
   FaWineGlassAlt,
   FaCocktail,
-} from "./icons";
+} from "../../utils/icons";
 import React from "react";
 
 /*

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTimes } from "../../icons";
+import { FaTimes } from "../../utils/icons";
 import { useFilterContext } from "../../context/filter_context";
 import { useMenuContext } from "../../context/menu_context";
 

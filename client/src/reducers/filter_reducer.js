@@ -6,8 +6,8 @@ import {
   FILTER_MENU,
   PAGINATE_MENU,
   UPDATE_PAGE,
-} from "../actions";
-import { paginate } from "../utils";
+} from "../utils/actions";
+import { paginate } from "../utils/helpers";
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_MENU) {

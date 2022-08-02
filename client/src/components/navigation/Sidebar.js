@@ -1,6 +1,6 @@
 import React from "react";
-import { FaTimes } from "../../icons";
-import { sublinks } from "../../data";
+import { FaTimes } from "../../utils/icons";
+import { sublinks } from "../../assets/data/data";
 import { useMenuContext } from "../../context/menu_context";
 
 const Sidebar = () => {
