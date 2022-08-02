@@ -1,0 +1,46 @@
+// TODO: consider renaming
+// Menu categories navigation
+.menu__nav {
+  padding: 6.4rem 3.2rem;
+
+  @media only screen and (max-width: 56.25em) {
+    padding: 6.4rem 1.6rem;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    padding: 2.4rem 1.6rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 2.4rem;
+
+    @media only screen and (max-width: 37.5em) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  li {
+    @media only screen and (max-width: 37.5em) {
+      min-width: 7rem;
+    }
+  }
+
+  .btn {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: var(--primary);
+    letter-spacing: 0.1rem;
+    width: 100%;
+    transition: var(--transition);
+  }
+
+  .btn--active,
+  .btn:hover {
+    box-shadow: -2px 0 var(--secondary);
+    color: var(--secondary);
+  }
+}
