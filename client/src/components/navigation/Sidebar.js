@@ -9,7 +9,7 @@ const Sidebar = () => {
     <aside className={`sidebar-wrapper ${isSidebarOpen ? "show" : ""}`}>
       <div className="sidebar">
         <button
-          aria-label="Search"
+          aria-label="close"
           type="button"
           className="btn btn--close"
           onClick={closeSidebar}

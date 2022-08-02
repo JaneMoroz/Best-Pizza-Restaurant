@@ -29,10 +29,10 @@ const CartItem = ({ item }) => {
         <h3>{name}</h3>
         <p>{formatPrice(price)}</p>
         {(category === "pizza" || category === "drink") && (
-          <p className="size">{size}</p>
+          <p className="cart-item__details">{size}</p>
         )}
         {toppings.length > 0 && (
-          <p className="toppings">
+          <p className="cart-item__details">
             Add more {toppings.join(", ").toLowerCase()}
           </p>
         )}

@@ -13,7 +13,7 @@ const Cart = () => {
       data-testid="cart"
       className={`cart-details ${isCartOpen ? "show" : ""}`}
     >
-      <header className="header">
+      <header>
         <h1>Your Cart</h1>
         <button
           type="button"

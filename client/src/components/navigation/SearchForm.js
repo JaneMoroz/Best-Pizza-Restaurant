@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaTimes } from "../../utils/icons";
 import { useFilterContext } from "../../context/filter_context";
 import { useMenuContext } from "../../context/menu_context";
@@ -10,9 +10,9 @@ const SearchForm = () => {
   } = useFilterContext();
   const { isSearchOpen, closeSearch } = useMenuContext();
 
-  const searchValue = React.useRef("");
+  const searchValue = useRef("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     searchValue.current.focus();
   }, [isSearchOpen]);
 
@@ -26,21 +26,22 @@ const SearchForm = () => {
       className={`search-form ${isSearchOpen ? "show" : ""}`}
       onSubmit={handleSubmit}
     >
-      <div className="form-control">
-        <input
-          type="text"
-          name="text"
-          id="name"
-          ref={searchValue}
-          onChange={updateFilters}
-          value={text}
-          data-testid="search-input"
-        />
-      </div>
+      <label htmlFor="name">Search</label>
+      <input
+        type="text"
+        name="text"
+        id="name"
+        ref={searchValue}
+        onChange={updateFilters}
+        value={text}
+        data-testid="search-input"
+        placeholder="search..."
+      />
       <button
-        className="btn btn--icon btn--form"
+        className="btn btn--icon search-form__btn"
         onClick={closeSearch}
         aria-label="close"
+        type="button"
       >
         <FaTimes className="icon" />
       </button>
