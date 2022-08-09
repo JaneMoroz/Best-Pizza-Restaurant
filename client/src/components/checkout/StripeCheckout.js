@@ -73,20 +73,21 @@ const CheckoutForm = () => {
   return (
     <div className="checkout">
       {succeeded ? (
-        <article className="checkout-inner checkout-inner--success">
+        <article className="checkout__inner checkout__inner--success">
           <h1>Checkout Page</h1>
           <p>Thank you</p>
           <p>Your payment was successful!</p>
           <p>Redirecting to home page shortly</p>
         </article>
       ) : (
-        <article className="checkout-inner">
+        <article className="checkout__inner">
           <h1>Checkout Page</h1>
           <p>
             Your total is <span>{formatPrice(total_amount)}</span>
           </p>
         </article>
       )}
+      {/* Start of Stripe form */}
       <form id="payment-form" onSubmit={handleSubmit}>
         <CardElement id="card-element" onChange={handleChange} />
         <button
@@ -116,6 +117,7 @@ const CheckoutForm = () => {
           Refresh the page to pay again.
         </p>
       </form>
+      {/* End of Stripe form */}
       <p className="test">Test Card Number: 4242 4242 4242 4242</p>
     </div>
   );

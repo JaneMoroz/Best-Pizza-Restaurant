@@ -1,18 +1,15 @@
-// Menu Section
-.menu {
-  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+.more-info-section {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4.8rem;
+  padding: 3.2rem 4.8rem 3.2rem 4.8rem;
+  border-top: 1px solid var(--tertiary);
 
   @media only screen and (max-width: 75em) {
-    padding: 3.2rem;
+    padding: 3.2rem 3.2rem 3.2rem 3.2rem;
   }
 
   @media only screen and (max-width: 56.25em) {
-    grid-template-columns: 100px 1fr;
-  }
-
-  @media only screen and (max-width: 37.5em) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -20,6 +17,9 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 1.2rem 3.2rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    row-gap: 3.2rem;
   }
 }

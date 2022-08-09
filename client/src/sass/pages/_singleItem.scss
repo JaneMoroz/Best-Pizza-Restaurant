@@ -1,13 +1,23 @@
 .single-product {
   min-height: 50rem;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .container-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   column-gap: 4.2rem;
   padding: 0 1.2rem;
@@ -18,15 +28,23 @@
 
   @media only screen and (max-width: 37.5em) {
     min-height: 60rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     max-width: 35rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
   img {
     height: 27rem;
     width: 27rem;
+    -o-object-fit: cover;
     object-fit: cover;
 
     @media only screen and (max-width: 56.25em) {
@@ -69,7 +87,11 @@
 }
 
 .option {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   column-gap: 1.6rem;
 
@@ -83,7 +105,11 @@
   }
 
   &__btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     max-width: 35rem;
     overflow-x: auto;

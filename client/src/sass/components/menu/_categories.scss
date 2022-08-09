@@ -12,7 +12,12 @@
   }
 
   ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     justify-content: flex-start;
     row-gap: 2.4rem;
@@ -35,11 +40,13 @@
     color: var(--primary);
     letter-spacing: 0.1rem;
     width: 100%;
+    -webkit-transition: var(--transition);
     transition: var(--transition);
   }
 
   .btn--active,
   .btn:hover {
+    -webkit-box-shadow: -2px 0 var(--secondary);
     box-shadow: -2px 0 var(--secondary);
     color: var(--secondary);
   }

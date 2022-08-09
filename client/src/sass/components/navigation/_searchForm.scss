@@ -5,11 +5,14 @@
   width: 20rem;
   top: 100%;
   left: 0;
+  -ms-transform: translate(-40%, 30%);
+  -webkit-transform: translate(-40%, 30%);
   transform: translate(-40%, 30%);
   background: var(--white);
   padding: 1;
   text-transform: capitalize;
   border-radius: 2rem;
+  -webkit-box-shadow: var(--light-shadow);
   box-shadow: var(--light-shadow);
 
   &.show {

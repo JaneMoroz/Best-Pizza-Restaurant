@@ -5,6 +5,7 @@ import { useCartContext } from "../context/cart_context";
 import { useMenuContext } from "../context/menu_context";
 import { formatPrice } from "../utils/helpers";
 import Image from "../components/Image";
+import { getPrice } from "../utils/helpers";
 
 const SingleItem = () => {
   const id = useParams().id;
@@ -30,13 +31,7 @@ const SingleItem = () => {
   }, [item]);
 
   useEffect(() => {
-    var oldPrice = +item.price;
-    var newPrice = "";
-    if (size === "Small") newPrice = oldPrice;
-    if (size === "Medium") newPrice = oldPrice + 300;
-    if (size === "Large") newPrice = oldPrice + 500;
-    if (toppings.length > 0) newPrice += 100 * toppings.length;
-    setFinalPrice(newPrice);
+    setFinalPrice(getPrice(+item.price, size, toppings));
   }, [size, toppings]);
 
   const handleOption = (e) => {

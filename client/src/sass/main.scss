@@ -15,11 +15,12 @@
 @import "components/menu/filters";
 @import "components/menu/pagination";
 @import "components/menu/products";
-@import "components/testimonials";
-@import "components/questions";
+@import "components/more-info/more-info";
+@import "components/more-info/testimonials";
+@import "components/more-info/questions";
 @import "components/loader";
-@import "components/error";
-@import "components/checkout";
 
 @import "pages/index";
-@import "pages/singleProduct";
+@import "pages/singleItem";
+@import "pages/error";
+@import "pages/checkout";

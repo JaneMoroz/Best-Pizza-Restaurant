@@ -27,7 +27,7 @@ const CartItem = ({ item }) => {
       </Link>
       <div className="cart-item__text">
         <h3>{name}</h3>
-        <p>{formatPrice(price)}</p>
+        <p className="cart-item__price">{formatPrice(price)}</p>
         {(category === "pizza" || category === "drink") && (
           <p className="cart-item__details">{size}</p>
         )}
