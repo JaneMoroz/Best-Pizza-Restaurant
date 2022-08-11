@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./navigation/Navbar";
 import Testimonials from "./testimonials/Testimonials";
 import Questions from "./question/Questions";
-import { useMenuContext } from "../context/menu_context";
+import { useNavContext } from "../context/nav_context";
 
 const SharedLayout = () => {
-  const { closeSubmenu } = useMenuContext();
+  const { closeSubmenu } = useNavContext();
   return (
     <>
       <Navbar />
