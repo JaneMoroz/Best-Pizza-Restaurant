@@ -20,6 +20,7 @@ const Cart = () => {
           className="btn btn--icon"
           onClick={closeCart}
           aria-label="close"
+          data-testid="close-cart-btn"
         >
           <FaTimes className="icon" />
         </button>
@@ -33,7 +34,7 @@ const Cart = () => {
       <footer className="total">
         <div className="total__text">
           <span>Total:</span>
-          <span>{formatPrice(total_amount)}</span>
+          <span data-testid="total-price">{formatPrice(total_amount)}</span>
         </div>
         <Link to="/checkout" onClick={closeCart} className="btn btn--secondary">
           Order

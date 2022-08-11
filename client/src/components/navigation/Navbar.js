@@ -4,12 +4,12 @@ import Sidebar from "./Sidebar";
 import Submenu from "./Submenu";
 import Cart from "../cart/Cart";
 import SearchForm from "./SearchForm";
-import { Link, useParams } from "react-router-dom";
-import { useMenuContext } from "../../context/menu_context";
+import { Link, useLocation } from "react-router-dom";
 import { useCartContext } from "../../context/cart_context";
+import { useNavContext } from "../../context/nav_context";
 
 const Navbar = () => {
-  const { id } = useParams();
+  const { pathname } = useLocation();
   const {
     openSidebar,
     openSubmenu,
@@ -17,7 +17,7 @@ const Navbar = () => {
     isSearchOpen,
     openSearch,
     closeSearch,
-  } = useMenuContext();
+  } = useNavContext();
   const { isCartOpen, openCart, closeCart, total_items } = useCartContext();
 
   const displaySubmenu = (e) => {
@@ -97,12 +97,13 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="nav__btns" onMouseOver={handleSubmenu}>
-          {id ? (
+          {pathname !== "/" ? (
             <Link
               to={"/"}
               type="button"
               className="btn btn--search"
               onClick={handleSearch}
+              data-testid="search-btn"
               aria-label="search"
             >
               <FaSearch className="icon" />
@@ -132,6 +133,7 @@ const Navbar = () => {
           <button
             type="button"
             className="btn btn--toggle"
+            data-testid="nav-toggle-btn"
             onClick={openSidebar}
             aria-label="navigation menu"
           >

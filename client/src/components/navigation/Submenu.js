@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useMenuContext } from "../../context/menu_context";
+import { useNavContext } from "../../context/nav_context";
 
 const Submenu = () => {
   const {
     isSubmenuOpen,
     submenuLocation,
     page: { links },
-  } = useMenuContext();
+  } = useNavContext();
 
   const container = useRef(null);
   const [columns, setColumns] = useState("col-2");

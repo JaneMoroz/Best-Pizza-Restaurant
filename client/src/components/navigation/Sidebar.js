@@ -1,18 +1,22 @@
 import React from "react";
 import { FaTimes } from "../../utils/icons";
 import { sublinks } from "../../assets/data/data";
-import { useMenuContext } from "../../context/menu_context";
+import { useNavContext } from "../../context/nav_context";
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useMenuContext();
+  const { isSidebarOpen, closeSidebar } = useNavContext();
   return (
-    <aside className={`sidebar-wrapper ${isSidebarOpen ? "show" : ""}`}>
+    <aside
+      className={`sidebar-wrapper ${isSidebarOpen ? "show" : ""}`}
+      data-testid="sidebar"
+    >
       <div className="sidebar">
         <button
           aria-label="close"
           type="button"
           className="btn btn--close"
           onClick={closeSidebar}
+          data-testid="close-sidebar-btn"
         >
           <FaTimes className="icon" />
         </button>

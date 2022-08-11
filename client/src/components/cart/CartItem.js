@@ -20,7 +20,7 @@ const CartItem = ({ item }) => {
     category,
   } = item;
   return (
-    <article className="cart-item">
+    <article data-testid="cart-item" className="cart-item">
       <Link to={`menu/${menuId}`} className="cart-item__img">
         <Image src={webpImg} fallback={image} alt={name} />
         {/* <img src={image} alt={name} /> */}
@@ -43,15 +43,17 @@ const CartItem = ({ item }) => {
           type="button"
           onClick={() => toggleAmount(id, "inc")}
           aria-label="increase quantity"
+          data-testid="inc-quantity"
         >
           <FaCaretUp className="icon" />
         </button>
-        <p>{amount}</p>
+        <p data-testid="cart-item-quantity">{amount}</p>
         <button
           className="btn btn--small"
           type="button"
           onClick={() => toggleAmount(id, "dec")}
           aria-label="decrease quantity"
+          data-testid="dec-quantity"
         >
           <FaCaretDown className="icon" />
         </button>
@@ -61,6 +63,7 @@ const CartItem = ({ item }) => {
         className="btn btn--icon"
         onClick={() => removeItem(id)}
         aria-label="delete from cart"
+        data-testid="delete-cart-item"
       >
         <FaRegTimesCircle className="icon" />
       </button>

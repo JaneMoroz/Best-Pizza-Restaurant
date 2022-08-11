@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { FaTimes } from "../../utils/icons";
 import { useFilterContext } from "../../context/filter_context";
-import { useMenuContext } from "../../context/menu_context";
+import { useNavContext } from "../../context/nav_context";
 
 const SearchForm = () => {
   const {
     filters: { text },
     updateFilters,
   } = useFilterContext();
-  const { isSearchOpen, closeSearch } = useMenuContext();
+  const { isSearchOpen, closeSearch } = useNavContext();
 
   const searchValue = useRef("");
 
@@ -42,6 +42,7 @@ const SearchForm = () => {
         onClick={closeSearch}
         aria-label="close"
         type="button"
+        data-testid="search-close"
       >
         <FaTimes className="icon" />
       </button>
