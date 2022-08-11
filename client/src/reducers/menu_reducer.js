@@ -1,10 +1,4 @@
 import {
-  SIDEBAR_OPEN,
-  SIDEBAR_CLOSE,
-  SUBMENU_OPEN,
-  SUBMENU_CLOSE,
-  SEARCH_OPEN,
-  SEARCH_CLOSE,
   GET_MENU_BEGIN,
   GET_MENU_SUCCESS,
   GET_MENU_ERROR,
@@ -14,30 +8,6 @@ import {
 } from "../utils/actions";
 
 const menu_reducer = (state, action) => {
-  if (action.type === SIDEBAR_OPEN) {
-    return { ...state, isSidebarOpen: true };
-  }
-  if (action.type === SIDEBAR_CLOSE) {
-    return { ...state, isSidebarOpen: false };
-  }
-  if (action.type === SUBMENU_OPEN) {
-    const { page, coordinates } = action.payload;
-    return {
-      ...state,
-      page,
-      submenuLocation: { ...coordinates },
-      isSubmenuOpen: true,
-    };
-  }
-  if (action.type === SUBMENU_CLOSE) {
-    return { ...state, isSubmenuOpen: false };
-  }
-  if (action.type === SEARCH_OPEN) {
-    return { ...state, isSearchOpen: true };
-  }
-  if (action.type === SEARCH_CLOSE) {
-    return { ...state, isSearchOpen: false };
-  }
   if (action.type === GET_MENU_BEGIN) {
     return { ...state, menu_loading: true };
   }

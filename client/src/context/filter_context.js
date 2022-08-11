@@ -10,6 +10,7 @@ import {
   UPDATE_PAGE,
 } from "../utils/actions";
 import { useMenuContext } from "./menu_context";
+import { useNavContext } from "./nav_context";
 
 const initialState = {
   filtered_menu: [],
@@ -28,7 +29,8 @@ const initialState = {
 const FilterContext = React.createContext();
 
 export const FilterProvider = ({ children }) => {
-  const { menu, isSearchOpen } = useMenuContext();
+  const { menu } = useMenuContext();
+  const { isSearchOpen } = useNavContext();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
