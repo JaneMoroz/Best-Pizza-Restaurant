@@ -27,7 +27,7 @@ function Testimonials() {
   };
 
   return (
-    <div className="testimonials">
+    <div className="testimonials" data-testid="testimonials">
       <div className="testimonials__inner">
         {testimonials.map((testimonial, testimonialIndex) => {
           const length = testimonials.length;
@@ -46,6 +46,7 @@ function Testimonials() {
           className="btn btn--icon left"
           onClick={prevSlide}
           aria-label="previous"
+          data-testid="previous"
         >
           <FaArrowCircleLeft className="icon" />
         </button>
@@ -54,6 +55,7 @@ function Testimonials() {
           className="btn btn--icon right"
           onClick={nextSlide}
           aria-label="next"
+          data-testid="next"
         >
           <FaArrowCircleRight className="icon" />
         </button>

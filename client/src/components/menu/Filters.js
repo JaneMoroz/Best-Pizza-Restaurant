@@ -62,6 +62,7 @@ const Filters = () => {
                 }`}
                 type="button"
                 onClick={updateFilters}
+                data-testid={`filter-${t}`}
               >
                 {`${t === "all" ? "all" : `#${t}`}`}
               </button>
@@ -77,6 +78,7 @@ const Filters = () => {
           className="btn btn--icon btn--sort"
           onClick={() => handleSort("sort-alphabetic")}
           aria-label="sort alphabetically"
+          data-testid="sort-al"
         >
           {sort === "name-a" ? (
             <FaSortAlphaDownAlt className="icon" />
@@ -89,11 +91,12 @@ const Filters = () => {
           className="btn btn--icon btn--sort"
           onClick={() => handleSort("sort-numeric")}
           aria-label="sort by price"
+          data-testid="sort-num"
         >
           {sort === "price-lowest" ? (
-            <FaSortNumericDown className="icon" />
-          ) : (
             <FaSortNumericDownAlt className="icon" />
+          ) : (
+            <FaSortNumericDown className="icon" />
           )}
         </button>
       </div>

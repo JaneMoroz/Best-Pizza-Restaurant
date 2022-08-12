@@ -4,7 +4,7 @@ import Question from "./Question";
 
 function Questions() {
   return (
-    <div className="questions">
+    <div className="questions" data-testid="questions">
       {questions.map((question) => {
         return <Question key={question.id} question={question} />;
       })}

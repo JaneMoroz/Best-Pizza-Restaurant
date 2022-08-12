@@ -26,7 +26,10 @@ const Testimonial = ({
   }
 
   return (
-    <figure className={`testimonial ${position}`}>
+    <figure
+      className={`testimonial ${position}`}
+      data-testid={`testimonial-${testimonialIndex}`}
+    >
       <FaQuoteRight className="icon" />
       <div className="testimonial__img">
         <img src={image} alt={name} />

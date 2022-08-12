@@ -82,7 +82,7 @@ const SingleItem = () => {
   }
 
   return (
-    <article className="single-product">
+    <article className="single-product" data-testid="single-item">
       <div className="container-center">
         <Image src={item.webpImg} fallback={item.image} alt={item.name} />
         {/* <img src={item.image} alt={item.name} /> */}
@@ -110,6 +110,7 @@ const SingleItem = () => {
                                 : ""
                             }`}
                             onClick={(e) => handleOption(e)}
+                            data-testid={`${option.name}-item-option`}
                           >
                             {value}
                           </button>
@@ -126,6 +127,7 @@ const SingleItem = () => {
             type="button"
             className="btn btn--outlined"
             onClick={() => handleAddToCart(item)}
+            data-testid="order"
           >
             Order
           </button>

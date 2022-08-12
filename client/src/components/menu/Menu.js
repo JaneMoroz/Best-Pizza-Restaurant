@@ -24,7 +24,7 @@ const Menu = () => {
   }
 
   return (
-    <section className="menu">
+    <section className="menu" data-testid="menu">
       <Categories />
       <div className="menu__products">
         <Filters />

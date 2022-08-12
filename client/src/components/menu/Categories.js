@@ -26,6 +26,7 @@ const Categories = () => {
                 }`}
                 type="button"
                 onClick={updateFilters}
+                data-testid={`category-${c}`}
               >
                 {c}
               </button>

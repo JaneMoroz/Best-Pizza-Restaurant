@@ -8,7 +8,7 @@ const Checkout = () => {
   // If cart is empty
   if (cart.length < 1) {
     return (
-      <div className="checkout-empty">
+      <div className="checkout-empty" data-testid="checkout-empty">
         <p>your cart is empty</p>
         <Link to="/" className="btn btn--secondary">
           Fill it
