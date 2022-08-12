@@ -33,6 +33,7 @@ const Pagination = () => {
         className="btn btn--outlined"
         onClick={prevPage}
         aria-label="previous page"
+        data-testid="prev"
       >
         <FaArrowLeft />
       </button>
@@ -45,6 +46,7 @@ const Pagination = () => {
               index === page ? "btn--active" : ""
             }`}
             onClick={() => handlePage(index)}
+            data-testid={`page-${index + 1}`}
           >
             {index + 1}
           </button>
@@ -55,6 +57,7 @@ const Pagination = () => {
         className="btn btn--outlined"
         onClick={nextPage}
         aria-label="next page"
+        data-testid="next"
       >
         <FaArrowRight />
       </button>

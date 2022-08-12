@@ -37,16 +37,21 @@ const Testimonial = ({
       </div>
       <blockquote className="testimonial__text">
         <figcaption>{name}</figcaption>
-        <p>
-          {readMore ? `${text} ` : `${text.substring(0, 70)}... `}
-          <button
-            type="button"
-            className="btn btn--text"
-            onClick={() => setReadMore(!readMore)}
-          >
-            {readMore ? "show less" : "  read more"}
-          </button>
-        </p>
+        {text.length > 70 && (
+          <div>
+            <span>
+              {readMore ? `${text} ` : `${text.substring(0, 70)}... `}
+            </span>
+            <button
+              type="button"
+              className="btn btn--text"
+              onClick={() => setReadMore(!readMore)}
+            >
+              {readMore ? "show less" : "read more"}
+            </button>
+          </div>
+        )}
+        {text.length <= 70 && text}
         <p className="testimonial__products">{order.join(" ,")}</p>
       </blockquote>
     </figure>

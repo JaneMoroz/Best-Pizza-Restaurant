@@ -77,6 +77,51 @@ describe("Menu", () => {
     const menuItems = screen.getAllByTestId("menu-item");
     expect(menuItems.length).toBe(6);
   });
+});
+
+describe("MenuPagination", () => {
+  beforeEach(() => {
+    render(<MockMenu />, { wrapper: WrapperComponent });
+  });
+  it("should render pagination", () => {
+    const paginationEl = screen.getByTestId("pagination");
+    expect(paginationEl).toBeInTheDocument();
+  });
+  it("should render 2 page buttons", () => {
+    const pageBtns = screen.getAllByTestId(/page-/i);
+    expect(pageBtns.length).toBe(2);
+  });
+  it("should render 4 menu items after 'page 2' button is clicked", () => {
+    const pageTwoBtn = screen.getByTestId("page-2");
+    fireEvent.click(pageTwoBtn);
+    const menuItems = screen.getAllByTestId("menu-item");
+    expect(menuItems.length).toBe(4);
+  });
+  it("should render 4 menu items after 'next' button is clicked", () => {
+    const nextBtn = screen.getByTestId("next");
+    fireEvent.click(nextBtn);
+    const menuItems = screen.getAllByTestId("menu-item");
+    expect(menuItems.length).toBe(4);
+  });
+  it("should render 6 menu items after 'next' button is clicked twice", () => {
+    const nextBtn = screen.getByTestId("next");
+    fireEvent.click(nextBtn);
+    fireEvent.click(nextBtn);
+    const menuItems = screen.getAllByTestId("menu-item");
+    expect(menuItems.length).toBe(6);
+  });
+  it("should render 4 menu items after 'previous' button is clicked", () => {
+    const prevBtn = screen.getByTestId("prev");
+    fireEvent.click(prevBtn);
+    const menuItems = screen.getAllByTestId("menu-item");
+    expect(menuItems.length).toBe(4);
+  });
+});
+
+describe("MenuCategoriesAndFilters", () => {
+  beforeEach(() => {
+    render(<MockMenu />, { wrapper: WrapperComponent });
+  });
   it("should render 6 categories", () => {
     const categoryEls = screen.getAllByTestId(/category/i);
     expect(categoryEls.length).toBe(5);
@@ -84,14 +129,6 @@ describe("Menu", () => {
   it("should render 5 filters", () => {
     const filterEls = screen.getAllByTestId(/filter/i);
     expect(filterEls.length).toBe(5);
-  });
-  it("should render 2 sorting btns", () => {
-    const sortBtns = screen.getAllByTestId(/sort/i);
-    expect(sortBtns.length).toBe(2);
-  });
-  it("should render pagination", () => {
-    const paginationEl = screen.getByTestId("pagination");
-    expect(paginationEl).toBeInTheDocument();
   });
   it("should render 4 menu items when 'pasta' category is clicked", () => {
     chooseCategory("pasta");
@@ -108,6 +145,16 @@ describe("Menu", () => {
     chooseFilter("gluten-free");
     const menuItems = screen.getAllByTestId("menu-item");
     expect(menuItems.length).toBe(2);
+  });
+});
+
+describe("MenuSorting", () => {
+  beforeEach(() => {
+    render(<MockMenu />, { wrapper: WrapperComponent });
+  });
+  it("should render 2 sorting btns", () => {
+    const sortBtns = screen.getAllByTestId(/sort/i);
+    expect(sortBtns.length).toBe(2);
   });
   it("should render menu items where the first menu item is 'Assorti pizza'", () => {
     expect(getFirstMenuItemName()).toHaveTextContent("Assorti");

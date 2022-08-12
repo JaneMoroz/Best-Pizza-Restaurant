@@ -53,6 +53,12 @@ describe("Navbar", () => {
     const submenuElement = screen.getByTestId("submenu");
     expect(submenuElement).toHaveClass("show");
   });
+});
+
+describe("SearchButton", () => {
+  beforeEach(() => {
+    render(<MockNavbar />, { wrapper: WrapperComponent });
+  });
   it("should show search form when search-btn is clicked", () => {
     const searchBtnElement = screen.getByTestId("search-btn");
     fireEvent.click(searchBtnElement);
@@ -65,6 +71,12 @@ describe("Navbar", () => {
     fireEvent.click(searchBtnElement);
     const searchFormElement = screen.queryByTestId("search-from");
     expect(searchFormElement).not.toHaveClass("show");
+  });
+});
+
+describe("CartButton", () => {
+  beforeEach(() => {
+    render(<MockNavbar />, { wrapper: WrapperComponent });
   });
   it("should show cart when cart-btn is clicked", () => {
     const cartBtnElement = screen.getByTestId("cart-btn");
@@ -86,6 +98,12 @@ describe("Navbar", () => {
     fireEvent.click(closeCartBtnElement);
     const cartElement = screen.getByTestId("cart");
     expect(cartElement).not.toHaveClass("show");
+  });
+});
+
+describe("Sidebar", () => {
+  beforeEach(() => {
+    render(<MockNavbar />, { wrapper: WrapperComponent });
   });
   it("should show sidebar when nav-toggle-btn is clicked", () => {
     const navToggleBtnElement = screen.getByTestId("nav-toggle-btn");
