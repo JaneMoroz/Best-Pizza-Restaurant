@@ -1,6 +1,6 @@
 # Best Pizza Restaurant
 
-A project to practice React skills.
+I created this app using React. The project is deployed and can be accessed at [Best Pizza Website](https://best-pizza-react.netlify.app/).
 
 ## 🚀 Technologies used:
 
@@ -11,6 +11,7 @@ A project to practice React skills.
 - [x] Reviews Carousel
 - [x] Questions Accordion
 - [x] Pagination
+- [x] **React Testing Library** & **Jest**
 
 ## 👩🏿👨 User Can:
 
@@ -21,6 +22,12 @@ A project to practice React skills.
 - [x] **Filter** menu items by category or type
 - [x] **Sort** menu items by name or price
 - [x] "Pay" with Stripe
+
+## 🧪🐙 Tests
+
+Tests were done using jest and react-testing-library. To see the tests run the following command:
+
+### `npm run test`
 
 ## 📃 Available Scripts
 
