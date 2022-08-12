@@ -34,8 +34,10 @@ export const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: LOAD_MENU, payload: menu });
-  }, [menu]);
+    if (menu.length !== 0) {
+      dispatch({ type: LOAD_MENU, payload: menu });
+    }
+  }, [menu]); // removed menu
 
   useEffect(() => {
     dispatch({ type: FILTER_MENU });

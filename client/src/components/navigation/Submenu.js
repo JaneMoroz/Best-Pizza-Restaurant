@@ -5,6 +5,7 @@ const Submenu = () => {
   const {
     isSubmenuOpen,
     submenuLocation,
+    closeSubmenu,
     page: { links },
   } = useNavContext();
 
@@ -32,6 +33,7 @@ const Submenu = () => {
 
   return (
     <aside
+      onMouseLeave={closeSubmenu}
       data-testid="submenu"
       className={`submenu ${isSubmenuOpen ? "show" : ""}`}
       ref={container}

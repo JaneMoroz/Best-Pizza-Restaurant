@@ -27,7 +27,7 @@ const Pagination = () => {
   };
 
   return (
-    <div className="pagination">
+    <div className="pagination" data-testid="pagination">
       <button
         type="button"
         className="btn btn--outlined"

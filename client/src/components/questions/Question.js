@@ -5,7 +5,7 @@ const Question = ({ question }) => {
   const [showInfo, setShowInfo] = useState(false);
   const { title, info } = question;
   return (
-    <article className="question">
+    <article className="question" data-testid="question">
       <header>
         <h3>{title}</h3>
         <button
@@ -17,7 +17,7 @@ const Question = ({ question }) => {
           {showInfo ? <FaMinus /> : <FaPlus />}
         </button>
       </header>
-      {showInfo && <p>{info}</p>}
+      {showInfo && <p data-testid="answer">{info}</p>}
     </article>
   );
 };

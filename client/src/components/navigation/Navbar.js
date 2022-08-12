@@ -32,9 +32,9 @@ const Navbar = () => {
     if (!e.target.classList.contains("link-btn")) {
       closeSubmenu();
     }
-    if (e.target.classList.contains("nav__btns")) {
-      closeSubmenu();
-    }
+    // if (e.target.classList.contains("nav__btns")) {
+    //   closeSubmenu();
+    // }
   };
 
   const handleSearch = () => {

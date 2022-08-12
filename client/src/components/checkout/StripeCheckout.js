@@ -71,7 +71,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="checkout">
+    <div className="checkout" data-testid="checkout">
       {succeeded ? (
         <article className="checkout__inner checkout__inner--success">
           <h1>Checkout Page</h1>

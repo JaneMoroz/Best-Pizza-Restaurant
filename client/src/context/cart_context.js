@@ -27,7 +27,7 @@ const initialState = {
   cartLocation: {},
 };
 
-const CartContext = React.createContext();
+export const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
